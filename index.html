@@ -116,15 +116,15 @@
     }
 
     .hero {
-      padding: 5rem 0 3rem;
-    }
+  padding: 2.5rem 0 2rem;
+}
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: start;
-    }
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+}
 
     .eyebrow {
       display: inline-block;
@@ -138,17 +138,19 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.12;
-      margin: 0 0 1rem;
-    }
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
+  max-width: 8.5ch;
+}
 
     .lead {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 46rem;
-      margin-bottom: 1.5rem;
-    }
+  font-size: 1.12rem;
+  color: #5f7487;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
 
     .hero-actions {
       display: flex;
@@ -166,12 +168,12 @@
     }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.4rem;
-    }
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(24, 50, 74, 0.06);
+  padding: 1.5rem;
+}
 
     .card h3 {
       margin-top: 0;
@@ -187,11 +189,11 @@
     }
 
     .stat {
-      background: #f9fcff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.9rem;
-    }
+  background: #f8fbfe;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+}
 
     .stat strong {
       display: block;
@@ -291,18 +293,22 @@
     }
 
     @media (max-width: 960px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .pricing {
-        grid-template-columns: 1fr;
-      }
+  .hero-grid,
+  .grid-3,
+  .grid-2,
+  .pricing {
+    grid-template-columns: 1fr;
+  }
 
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -324,13 +330,13 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Research-based intercultural communication support</div>
-          <h1>Specialised communication tools for international teachers and school leaders</h1>
+      <div class="container hero-grid"><div style="max-width: 760px;">
+  <div class="eyebrow">Research-based intercultural communication support</div>
+          <h1>Clear communication tools for foreign teachers and school leaders</h1>
           <p class="lead">
-            BridgeEDU is built from postgraduate research on ICT-mediated intercultural communication in Thai educational settings. It translates thesis findings into practical tools, ready-made message templates, and professional guidance for clearer school communication.
-          </p>
+            <p class="lead">
+  BridgeEDU turns postgraduate research into practical tools for clearer communication in cross-cultural school settings. It provides message templates, guidance, and research-informed support for foreign teachers and school leaders.
+</p>
           <div class="hero-actions">
             <a href="#toolkit" class="button">Get the Toolkit</a>
             <a href="#research" class="button-secondary">See the Research Basis</a>
@@ -399,7 +405,7 @@
 
     <section id="teachers">
       <div class="container">
-        <h2>Support for international teachers</h2>
+        <h2>Support for foreign teachers</h2>
         <p class="section-intro">
           Many foreign teachers are expected to communicate professionally in unfamiliar institutional cultures. These resources help reduce uncertainty and improve written clarity.
         </p>
