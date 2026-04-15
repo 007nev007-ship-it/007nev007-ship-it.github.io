@@ -3,44 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BridgeEDU | Research-Based Communication Tools for International Schools</title>
-  <meta name="description" content="Research-based communication tools, message templates, and practical guidance for foreign teachers and school administrators working across cultures." />
+
+  <title>BridgeEDU | Communication Tools for Foreign Teachers</title>
+  <meta name="description" content="Research-based communication tools, templates, and practical guidance for foreign teachers and school leaders working across cultures." />
+
   <style>
     :root {
-      --bg: #f7fbff;
-      --surface: #ffffff;
+      --blue: #2e79b8;
+      --blue-dark: #1e5f96;
+      --blue-soft: #e9f4fd;
+
+      --orange: #f28c28;
+      --orange-soft: #fff4e8;
+
       --ink: #18324a;
       --muted: #5f7487;
       --line: #d8e6f2;
-      --accent: #2e79b8;
-      --accent-soft: #e9f4fd;
-      --highlight: #0f5f9c;
-      --max: 1120px;
+
+      --bg: #f7fbff;
+      --white: #ffffff;
+
       --radius: 18px;
-      --shadow: 0 10px 30px rgba(24, 50, 74, 0.08);
+      --shadow: 0 10px 25px rgba(24, 50, 74, 0.08);
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behaviour: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
       color: var(--ink);
-      background: linear-gradient(180deg, #f7fbff 0%, #eef6fc 100%);
       line-height: 1.6;
     }
 
     a {
-      color: var(--highlight);
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: inherit;
     }
 
     .container {
@@ -51,133 +51,105 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(247, 251, 255, 0.92);
+      background: rgba(247, 251, 255, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(216, 230, 242, 0.8);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
       padding: 1rem 0;
     }
 
-    .brand {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .brand span {
-      color: var(--accent);
+    .brand img {
+      height: 70px;
     }
 
     .nav-links {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 1.2rem;
       align-items: center;
       font-size: 0.95rem;
     }
 
-    .button,
-    .button-secondary {
-      display: inline-block;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s ease;
+    .nav-links a:hover {
+      color: var(--blue);
     }
 
     .button {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: var(--shadow);
+      background: var(--orange);
+      color: white;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
     .button:hover {
-      background: var(--highlight);
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-
-    .button-secondary {
-      background: var(--accent-soft);
-      color: var(--highlight);
-      border: 1px solid var(--line);
-    }
-
-    .button-secondary:hover {
-      text-decoration: none;
+      background: #e27a12;
       transform: translateY(-1px);
     }
 
     .hero {
-  padding: 2.5rem 0 2rem;
-}
+      padding: 3rem 0 2.5rem;
+    }
 
     .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
-  gap: 2.5rem;
-  align-items: center;
-}
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
 
     .eyebrow {
-      display: inline-block;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
       padding: 0.4rem 0.8rem;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--highlight);
-      font-size: 0.88rem;
-      font-weight: 700;
+      display: inline-block;
+      font-weight: bold;
       margin-bottom: 1rem;
+      font-size: 0.85rem;
     }
 
     h1 {
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
-  line-height: 1.1;
-  margin: 0 0 1rem;
-  letter-spacing: -0.02em;
-}
+      font-size: clamp(2.5rem, 4vw, 3.3rem);
+      margin: 0 0 1rem;
+    }
 
     .lead {
-  font-size: 1.12rem;
-  color: #5f7487;
-  max-width: 42rem;
-  margin-bottom: 1.5rem;
-}
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 520px;
+    }
 
     .hero-actions {
       display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.25rem;
-    }
-
-    .mini-points {
-      display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.95rem;
+    }
+
+    .secondary {
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      font-weight: bold;
     }
 
     .card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  box-shadow: 0 10px 24px rgba(24, 50, 74, 0.06);
-  padding: 1.5rem;
-}
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+    }
 
     .card h3 {
       margin-top: 0;
-      margin-bottom: 0.7rem;
-      font-size: 1.1rem;
     }
 
     .stat-grid {
@@ -188,385 +160,158 @@
     }
 
     .stat {
-  background: #f8fbfe;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 1rem;
-}
-
-    .stat strong {
-      display: block;
-      font-size: 1.2rem;
-      color: var(--highlight);
+      background: var(--blue-soft);
+      padding: 0.8rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
     }
 
     section {
-      padding: 1.6rem 0 3rem;
+      padding: 2rem 0;
     }
 
     h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.35rem);
-      margin-bottom: 0.7rem;
-    }
-
-    .section-intro {
-      max-width: 44rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .grid-3,
-    .grid-2 {
-      display: grid;
-      gap: 1.2rem;
+      margin-bottom: 0.6rem;
     }
 
     .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .feature-title {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-      font-size: 1.08rem;
-    }
-
-    .feature-list {
-      margin: 0;
-      padding-left: 1.15rem;
-      color: var(--muted);
-    }
-
-    .quote-box {
-      background: #f9fcff;
-      border-left: 4px solid var(--accent);
-      padding: 1rem 1rem 1rem 1.1rem;
-      border-radius: 0 14px 14px 0;
-      margin-top: 1rem;
-    }
-
-    .audience-tag {
-      display: inline-block;
-      margin-bottom: 0.8rem;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: var(--highlight);
-      background: var(--accent-soft);
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-    }
-
-    .resource-name {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
-    }
-
-    .pricing {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
-      align-items: stretch;
     }
 
-    .price {
-      font-size: 2.3rem;
-      line-height: 1;
-      margin: 0.6rem 0;
-      color: var(--highlight);
-      font-weight: 800;
+    .card-link:hover {
+      transform: translateY(-4px);
+      transition: 0.2s;
+    }
+
+    .highlight {
+      color: var(--orange);
+      font-weight: bold;
     }
 
     footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer-box {
       border-top: 1px solid var(--line);
-      padding-top: 1.4rem;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    @media (max-width: 960px) {
-  .hero-grid,
-  .grid-3,
-  .grid-2,
-  .pricing {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
 
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  h1 {
-    max-width: none;
-  }
-}
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-  <img src="BridgeEDU2.png" alt="BridgeEDU Logo" style="height: 110px;">
-</div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#teachers">For Teachers</a>
-        <a href="#leaders">For School Leaders</a>
-        <a href="#research">Research</a>
-        <a href="#resources">Resources</a>
-        <a href="#toolkit" class="button">Get the Toolkit</a>
-      </nav>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <img src="BridgeEDU2.png" alt="BridgeEDU Logo">
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid"><div>
-  <div class="eyebrow">Research-based intercultural communication support</div>
-          <h1>Clear communication tools for foreign teachers and school leaders</h1>
-          <p class="lead">
-            <p class="lead">
-  BridgeEDU turns postgraduate research into practical tools for clearer communication in cross-cultural school settings. It provides message templates, guidance, and research-informed support for foreign teachers and school leaders.
-</p>
-          <div class="hero-actions">
-            <a href="#toolkit" class="button">Get the Toolkit</a>
-            <a href="#research" class="button-secondary">See the Research Basis</a>
-          </div>
-          <div class="mini-points">
-            <span>Clear professional English</span>
-            <span>Cross-cultural school contexts</span>
-            <span>Practical digital communication support</span>
-          </div>
-        </div>
-        <aside class="card">
-          <h3>Why this website is different</h3>
-          <p>
-            This is not a generic ESL blog. It is a focused platform based on research into communication between foreign English language teachers and school administrators, with specific attention to digital tools, clarity, and intercultural understanding.
-          </p>
-          <div class="stat-grid">
-            <div class="stat">
-              <strong>4</strong>
-              studies included in the meta-analysis
-            </div>
-            <div class="stat">
-              <strong>25</strong>
-              survey items on communication and ICT use
-            </div>
-            <div class="stat">
-              <strong>n = 14</strong>
-              foreign teacher survey participants
-            </div>
-            <div class="stat">
-              <strong>1 site</strong>
-              for tools, insight, and practical support
-            </div>
-          </div>
-        </aside>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="leaders.html">School Leaders</a>
+      <a href="research.html">Research</a>
+      <a href="resources.html">Resources</a>
+      <a href="toolkit.html" class="button">Toolkit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">Research-based communication support</div>
+
+      <h1>
+        Clear communication tools for foreign teachers and school leaders
+      </h1>
+
+      <p class="lead">
+        BridgeEDU transforms postgraduate research into practical communication tools for real school environments. Improve clarity, reduce misunderstandings, and communicate more effectively across cultures.
+      </p>
+
+      <div class="hero-actions">
+        <a href="toolkit.html" class="button">Get the Toolkit</a>
+        <a href="research.html" class="secondary">View Research</a>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2>From thesis to specialised platform</h2>
-        <p class="section-intro">
-          The core purpose of BridgeEDU is to convert academic research into usable support for real schools. Rather than leaving the thesis as a static document, this website gives it a practical public-facing form.
-        </p>
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="feature-title">Research translation</h3>
-            <p>
-              Key findings are rewritten in accessible language so teachers and school leaders can understand the communication issues that matter without needing to read a full academic thesis.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="feature-title">Professional tools</h3>
-            <p>
-              Message templates, checklists, and communication guides provide immediate support for routine school situations where tone, clarity, and timing matter.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="feature-title">Niche authority</h3>
-            <p>
-              The site is positioned around one narrow problem space: intercultural communication in educational workplaces, especially where English is used across different linguistic and cultural backgrounds.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="teachers">
-      <div class="container">
-        <h2>Support for foreign teachers</h2>
-        <p class="section-intro">
-          Many foreign teachers are expected to communicate professionally in unfamiliar institutional cultures. These resources help reduce uncertainty and improve written clarity.
-        </p>
-        <div class="grid-2">
-          <article class="card">
-            <div class="audience-tag">Teacher toolkit focus</div>
-            <h3 class="feature-title">Ready-to-use message templates</h3>
-            <ul class="feature-list">
-              <li>Schedule clarification</li>
-              <li>Polite follow-up messages</li>
-              <li>Requests for confirmation</li>
-              <li>Professional boundary-setting</li>
-              <li>Responses to sudden changes</li>
-            </ul>
-            <div class="quote-box">
-              <strong>Sample template</strong><br>
-              Could you please confirm the schedule for tomorrow when convenient? I just want to make sure I have everything correct on my side. Thank you.
-            </div>
-          </article>
-          <article class="card">
-            <div class="audience-tag">Practical communication support</div>
-            <h3 class="feature-title">Guidance grounded in school reality</h3>
-            <ul class="feature-list">
-              <li>How to sound respectful without sounding weak</li>
-              <li>How to write clearly when urgency is involved</li>
-              <li>How to reduce misunderstandings in messaging apps</li>
-              <li>How to maintain professionalism during stressful exchanges</li>
-              <li>How to communicate across different expectations of hierarchy</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="leaders">
-      <div class="container">
-        <h2>Support for school administrators and coordinators</h2>
-        <p class="section-intro">
-          The thesis also points to a practical need on the leadership side. Administrators benefit from clear, culturally aware English when communicating with international staff.
-        </p>
-        <div class="grid-2">
-          <article class="card">
-            <div class="audience-tag">Leadership communication</div>
-            <h3 class="feature-title">Administrator-to-teacher message bank</h3>
-            <p>
-              This section can be developed into a parallel set of English-medium templates for coordinators, heads of department, and school leaders who communicate with foreign staff.
-            </p>
-            <ul class="feature-list">
-              <li>Announcements and reminders</li>
-              <li>Requests for documents or lesson plans</li>
-              <li>Meeting invitations and follow-ups</li>
-              <li>Behaviour and policy communication</li>
-              <li>Supportive responses to teacher concerns</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="audience-tag">Intercultural leadership</div>
-            <h3 class="feature-title">Communication quality matters institutionally</h3>
-            <p>
-              The website can position effective communication not just as an individual teacher issue, but as part of school organisation, staff retention, trust, and operational efficiency.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="container">
-        <h2>The research basis</h2>
-        <p class="section-intro">
-          Your thesis gives this website a credible foundation. That should be visible. The research section helps establish authority while still remaining readable for a general audience.
-        </p>
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="feature-title">Meta-analysis</h3>
-            <p>
-              A four-study meta-analysis examined ICT-enhanced communication and intercultural communication barriers within relevant educational contexts. The results suggested a meaningful relationship, while also showing strong heterogeneity across studies.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="feature-title">Survey strand</h3>
-            <p>
-              The survey explored how foreign English language teachers perceived communication effectiveness, ICT use, and communication-related factors in Thai educational settings.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="feature-title">Practical implication</h3>
-            <p>
-              Taken together, the findings support the idea that communication quality can be improved through clear digital practices, appropriate wording, and more thoughtful intercultural awareness.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources">
-      <div class="container">
-        <h2>Specialised resources</h2>
-        <p class="section-intro">
-          This section should gradually become a curated library built from your research themes and professional insights.
-        </p>
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="resource-name">Message template packs</h3>
-            <p>Downloadable toolkits for everyday school communication, organised by scenario and level of sensitivity.</p>
-          </article>
-          <article class="card">
-            <h3 class="resource-name">Short guidance articles</h3>
-            <p>Readable articles on tone, hierarchy, digital etiquette, and communication clarity in multilingual school settings.</p>
-          </article>
-          <article class="card">
-            <h3 class="resource-name">Research summaries</h3>
-            <p>Accessible summaries of thesis findings for teachers, coordinators, school owners, and education professionals.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="toolkit">
-      <div class="container">
-        <h2>The flagship product</h2>
-        <p class="section-intro">
-          Your homepage should lead toward one core offer. Everything else supports that offer.
-        </p>
-        <div class="pricing">
-          <article class="card">
-            <h3 class="feature-title">ESL Communication Toolkit for International Teachers</h3>
-            <p>
-              A practical downloadable toolkit designed to reduce misunderstandings and improve professionalism in everyday communication with school administrators.
-            </p>
-            <ul class="feature-list">
-              <li>Ready-made message templates</li>
-              <li>Professional wording for difficult situations</li>
-              <li>Clear examples for common school scenarios</li>
-              <li>Editable resource format</li>
-              <li>Built from research and lived educational experience</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="audience-tag">Primary offer</div>
-            <p style="margin:0;">Starting from</p>
-            <div class="price">$4.99</div>
-            <p>
-              Replace the button below with your live Payhip or Gumroad product link.
-            </p>
-            <p>
-              <a href="https://payhip.com/" class="button">Buy the Toolkit</a>
-            </p>
-            <p>
-              <a href="#resources" class="button-secondary">Browse the Resource Library</a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-box">
-      <p><strong>BridgeEDU</strong> is a specialised communication platform developed from postgraduate research into ICT-mediated intercultural communication in education.</p>
-      <p>This website can continue expanding into a niche hub for teachers, school leaders, downloadable resources, and research-informed communication guidance.</p>
     </div>
-  </footer>
+
+    <aside class="card">
+      <h3>Why BridgeEDU is different</h3>
+      <p>
+        Built from real research and real teaching experience, BridgeEDU focuses specifically on communication between foreign teachers and school administrators in multilingual, cross-cultural environments.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat"><strong>4 studies</strong><br>meta-analysis</div>
+        <div class="stat"><strong>25 items</strong><br>survey data</div>
+        <div class="stat"><strong>n = 14</strong><br>teacher insights</div>
+        <div class="stat"><strong>1 focus</strong><br>clear communication</div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2>From research to real-world tools</h2>
+    <p class="lead">
+      This platform converts academic research into practical support for everyday school communication.
+    </p>
+
+    <div class="grid-3">
+
+      <a href="research.html" class="card-link">
+        <div class="card">
+          <h3>Research translation</h3>
+          <p>Understand key findings without reading a full thesis.</p>
+        </div>
+      </a>
+
+      <a href="toolkit.html" class="card-link">
+        <div class="card">
+          <h3>Professional tools</h3>
+          <p>Use ready-made templates for real communication situations.</p>
+        </div>
+      </a>
+
+      <a href="about.html" class="card-link">
+        <div class="card">
+          <h3>Niche authority</h3>
+          <p>Built from real experience and postgraduate research.</p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p><strong>BridgeEDU</strong> — Developed by Neville O’Callaghan</p>
+  </div>
+</footer>
+
 </body>
 </html>
