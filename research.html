@@ -1,89 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research | BridgeEDU</title>
-  <meta name="description" content="Research summaries and practical findings behind BridgeEDU." />
-  <style>
-    :root {
-      --blue: #2e79b8; --blue-dark: #1e5f96; --blue-soft: #e9f4fd;
-      --orange: #f28c28; --ink: #18324a; --muted: #5f7487;
-      --line: #d8e6f2; --bg: #f7fbff; --white: #ffffff;
-      --radius: 18px; --shadow: 0 10px 25px rgba(24, 50, 74, 0.08); --max: 1100px;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
-    header { position: sticky; top: 0; z-index: 100; background: rgba(247, 251, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-    .brand img { height: 70px; }
-    .nav-links { display: flex; gap: 1.2rem; align-items: center; font-size: 0.95rem; flex-wrap: wrap; }
-    .nav-links a:hover { color: var(--blue); }
-    .button { background: var(--orange); color: white; padding: 0.7rem 1.1rem; border-radius: 999px; font-weight: bold; }
-    main { padding: 3rem 0; }
-    h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 0 0 1rem; }
-    .lead { color: var(--muted); max-width: 780px; }
-    .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem; margin-top: 1.5rem; }
-    .highlight { display: inline-block; background: var(--blue-soft); color: var(--blue-dark); padding: 0.4rem 0.8rem; border-radius: 999px; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem; }
-    footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
-    @media (max-width: 900px) { .nav { flex-direction: column; align-items: flex-start; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | BridgeEDU</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f4f8fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #16324f;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2 {
+            color: #1e3a5f;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            background-color: #e8f1fb;
+            padding: 20px;
+            border-left: 5px solid #1e3a5f;
+            margin: 30px 0;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta a {
+            background-color: #ff7a00;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .cta a:hover {
+            background-color: #e66a00;
+        }
+
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
+
 <header>
-  <div class="container nav">
-    <div class="brand"><a href="index.html"><img src="BridgeEDU2.png" alt="BridgeEDU Logo"></a></div>
-    <nav class="nav-links">
-      <a href="about.html">About</a>
-      <a href="teachers.html">Teachers</a>
-      <a href="leaders.html">School Leaders</a>
-      <a href="research.html">Research</a>
-      <a href="resources.html">Resources</a>
-      <a href="toolkit.html" class="button">Toolkit</a>
-    </nav>
-  </div>
+    <h1>BridgeEDU</h1>
+    <p>Research-Based Communication in Education</p>
 </header>
 
-<main>
-  <div class="container">
-    <div class="highlight">Research basis</div>
-    <h1>The research behind BridgeEDU</h1>
-    <p class="lead">
-      BridgeEDU is grounded in postgraduate research on ICT-mediated intercultural communication in education. The purpose of this page is to present that foundation in clear, accessible language.
-    </p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="leaders.html">School Leaders</a>
+    <a href="research.html">Research</a>
+    <a href="resources.html">Resources</a>
+    <a href="toolkit.html">Toolkit</a>
+</nav>
 
-    <div class="card">
-      <h2>Meta-analysis</h2>
-      <p>
-        The research included a meta-analysis of four studies related to ICT-enhanced communication and intercultural communication in educational settings. Taken together, the studies suggested a meaningful relationship between communication-related factors and educational interaction, while also showing notable variation across contexts.
-      </p>
+<div class="container">
+
+    <div class="section">
+        <h1>The Research Behind BridgeEDU</h1>
+        <p>
+            BridgeEDU is grounded in a Master’s-level research study examining communication 
+            between school leaders and foreign English language teachers in Thai educational settings.
+        </p>
+        <p>
+            The research combines a meta-analysis of existing studies with real-world teacher data 
+            to provide both theoretical insight and practical application.
+        </p>
     </div>
 
-    <div class="card">
-      <h2>Survey strand</h2>
-      <p>
-        The broader study also included survey data from foreign English language teachers in Thai educational settings. This part of the research explored perceived communication effectiveness, ICT use, and communication-related factors in everyday school interaction.
-      </p>
+    <div class="section highlight">
+        <h2>Key Finding</h2>
+        <p>
+            ICT (Information and Communication Technology) can significantly improve communication 
+            in intercultural school environments — but only when it is used with clarity and structure.
+        </p>
     </div>
 
-    <div class="card">
-      <h2>Practical implications</h2>
-      <p>
-        The research suggests that communication effectiveness can be improved through clearer digital practices, more thoughtful message design, and better awareness of intercultural and institutional expectations.
-      </p>
-      <p>
-        In other words, small changes in wording, timing, tone, and communication structure can make a real difference.
-      </p>
+    <div class="section">
+        <h2>Meta-Analysis Overview</h2>
+        <p>
+            A systematic review of four studies was conducted to examine the relationship between 
+            ICT use and communication effectiveness in educational contexts.
+        </p>
+
+        <ul>
+            <li>Strong overall positive relationship identified</li>
+            <li>High variability across different contexts</li>
+            <li>Results highlight the importance of implementation, not just access</li>
+        </ul>
     </div>
-  </div>
-</main>
+
+    <div class="section">
+        <h2>Teacher Survey Insights</h2>
+        <p>
+            A targeted survey of foreign English language teachers provided additional insight into 
+            everyday communication experiences within schools.
+        </p>
+
+        <ul>
+            <li>Digital tools are widely used but inconsistently applied</li>
+            <li>Clarity of message is more important than tool selection</li>
+            <li>Miscommunication often stems from structure, not language ability</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>What This Means in Practice</h2>
+        <p>
+            The research does not suggest that more technology is the solution. 
+            Instead, it shows that structured communication practices are essential.
+        </p>
+
+        <ul>
+            <li>Simple, clear messaging improves outcomes</li>
+            <li>Consistency reduces confusion</li>
+            <li>Shared expectations strengthen communication across cultures</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <h2>Apply the Research in Your School</h2>
+        <p>Move from theory to practical implementation.</p>
+        <a href="https://payhip.com/b/6Tik2" target="_blank">Get the Toolkit</a>
+    </div>
+
+    <div class="section">
+        <h2>Next Step</h2>
+        <p>
+            Explore practical tools and materials designed to support everyday communication in schools.
+        </p>
+
+        <div class="cta">
+            <a href="resources.html">View Resources →</a>
+        </div>
+    </div>
+
+</div>
 
 <footer>
-  <div class="container">
-    <p><strong>BridgeEDU</strong> — Research-informed communication support</p>
-  </div>
+    <p>BridgeEDU | Developed by Neville O’Callaghan</p>
 </footer>
+
 </body>
 </html>
