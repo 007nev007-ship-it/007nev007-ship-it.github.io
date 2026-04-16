@@ -4,95 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Leaders | BridgeEDU</title>
-
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f4f8fb;
-            color: #333;
-        }
-
-        header {
-            background-color: #1e3a5f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #16324f;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1, h2 {
-            color: #1e3a5f;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .highlight {
-            background-color: #e8f1fb;
-            padding: 20px;
-            border-left: 5px solid #1e3a5f;
-            margin: 30px 0;
-        }
-
-        .cta {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .cta a {
-            background-color: #ff7a00;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .cta a:hover {
-            background-color: #e66a00;
-        }
-
-        footer {
-            background-color: #1e3a5f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f8fb; color: #243b53; }
+        header { background-color: #1e3a5f; color: white; padding: 18px 20px; border-bottom: 4px solid #ff7a00; }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; text-align: center; }
+        .site-logo { height: 68px; width: auto; display: block; }
+        .site-brand h1 { margin: 0; font-size: 2rem; line-height: 1.1; }
+        .site-brand p { margin: 6px 0 0; font-size: 0.98rem; opacity: 0.95; }
+        nav { background-color: #16324f; padding: 12px 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; font-size: 0.98rem; display: inline-block; }
+        nav a:hover { text-decoration: underline; }
+        .page-hero { background-color: #eaf2fb; padding: 60px 20px; border-bottom: 1px solid #d6e3f2; }
+        .page-hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .page-hero h2 { margin: 0 0 14px; font-size: 2.4rem; color: #1e3a5f; }
+        .page-hero p { margin: 0 auto; max-width: 760px; font-size: 1.08rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .section { margin-bottom: 70px; }
+        .section h2 { color: #1e3a5f; font-size: 2rem; margin-bottom: 18px; }
+        .intro-text { font-size: 1.08rem; max-width: 850px; }
+        .highlight-box { background-color: #eaf2fb; border-left: 6px solid #ff7a00; padding: 24px; border-radius: 10px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 30px; }
+        .card { background-color: white; border-radius: 14px; padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-top: 5px solid #1e3a5f; }
+        .card h3 { color: #1e3a5f; margin-top: 0; }
+        .btn-primary, .btn-secondary { display: inline-block; padding: 14px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.2s ease; }
+        .btn-primary { background-color: #ff7a00; color: white; }
+        .btn-primary:hover { background-color: #e66a00; }
+        .btn-secondary { background-color: transparent; color: #1e3a5f; border: 2px solid #1e3a5f; }
+        .btn-secondary:hover { background-color: #eef5fc; }
+        .cta-center { text-align: center; margin-top: 30px; }
+        .final-cta { background-color: #1e3a5f; color: white; border-radius: 16px; padding: 45px 30px; text-align: center; }
+        .final-cta h2 { color: white; margin-top: 0; }
+        .final-cta p { max-width: 760px; margin: 0 auto 24px; font-size: 1.06rem; }
+        footer { background-color: #16324f; color: white; text-align: center; padding: 24px 20px; font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            .site-brand h1 { font-size: 1.7rem; }
+            .page-hero h2 { font-size: 2rem; }
+            nav a { margin: 6px 10px; }
+            .site-logo { height: 58px; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <h1>BridgeEDU</h1>
-    <p>Supporting School Leaders in Intercultural Communication</p>
+    <div class="header-inner">
+        <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
+        <div class="site-brand">
+            <h1>BridgeEDU</h1>
+            <p>Developed by Neville O’Callaghan</p>
+        </div>
+    </div>
 </header>
 
 <nav>
@@ -105,88 +67,67 @@
     <a href="toolkit.html">Toolkit</a>
 </nav>
 
-<div class="container">
-
-    <div class="section">
-        <h1>For School Leaders</h1>
-        <p>
-            Leading in an intercultural school environment requires more than strong management skills. 
-            It requires clear, consistent communication across languages, cultures, and digital platforms.
-        </p>
-        <p>
-            BridgeEDU supports school leaders in creating communication systems that reduce confusion, 
-            improve teacher confidence, and strengthen overall school effectiveness.
-        </p>
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <h2>For School Leaders</h2>
+        <p>Structured communication support for leaders working with diverse staff in multilingual and intercultural educational settings.</p>
     </div>
+</section>
 
-    <div class="section highlight">
-        <h2>The Challenge</h2>
-        <p>
-            Many school leaders encounter:
+<main class="container">
+    <section class="section">
+        <h2>Why communication matters in leadership</h2>
+        <p class="intro-text">
+            Effective school leadership depends not only on decision-making, but also on how those decisions are communicated.
+            In multilingual and intercultural settings, even well-intended messages can create confusion if they are unclear,
+            inconsistent, or overly complex.
         </p>
-        <ul>
-            <li>Messages being misunderstood or ignored</li>
-            <li>Overly complex or unclear instructions</li>
-            <li>Inconsistent communication across departments</li>
-            <li>Heavy reliance on translation tools without clarity</li>
-        </ul>
-        <p>
-            These issues are rarely about effort — they are often about structure.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>What Effective Leadership Looks Like</h2>
-        <p>
-            Strong communication systems are built on simplicity and consistency.
-        </p>
-
-        <ul>
-            <li>Clear and direct messaging</li>
-            <li>Predictable communication formats</li>
-            <li>Awareness of intercultural differences</li>
-            <li>Purposeful use of ICT tools</li>
-        </ul>
-
-        <p>
-            When these elements are in place, teachers are more confident, responsive, and aligned with expectations.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>How BridgeEDU Supports You</h2>
-        <p>
-            This platform is grounded in research on communication between school leaders and foreign English language teachers.
-        </p>
-
-        <p>You will find:</p>
-
-        <ul>
-            <li>Structured communication templates for common scenarios</li>
-            <li>Examples of clear, effective administrative messaging</li>
-            <li>Strategies to reduce miscommunication</li>
-            <li>Practical approaches to ICT-based communication</li>
-        </ul>
-    </div>
-
-    <div class="cta">
-        <h2>Strengthen Your Communication Systems</h2>
-        <p>Implement clear, structured communication across your school.</p>
-        <a href="https://payhip.com/b/6Tik2" target="_blank">Get the Toolkit</a>
-    </div>
-
-    <div class="section">
-        <h2>Next Step</h2>
-        <p>
-            To understand the research behind these strategies, explore the findings that inform BridgeEDU.
-        </p>
-
-        <div class="cta">
-            <a href="research.html">Explore the Research →</a>
+        <div class="highlight-box">
+            BridgeEDU supports leaders in building clearer communication systems that reduce misunderstanding and improve professional alignment.
         </div>
-    </div>
+    </section>
 
-</div>
+    <section class="section">
+        <h2>Common leadership communication challenges</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Inconsistent messaging</h3>
+                <p>Teachers may receive mixed messages across departments, platforms, or from different members of leadership.</p>
+            </div>
+            <div class="card">
+                <h3>Over-complex instructions</h3>
+                <p>Messages that are too detailed or unclear can increase stress rather than improve understanding.</p>
+            </div>
+            <div class="card">
+                <h3>Cross-cultural interpretation</h3>
+                <p>Different expectations around tone, hierarchy, or directness can affect how instructions are received.</p>
+            </div>
+            <div class="card">
+                <h3>Digital communication gaps</h3>
+                <p>Technology helps, but it must be used purposefully if communication is to remain clear and efficient.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>How BridgeEDU supports leaders</h2>
+        <p class="intro-text">
+            BridgeEDU provides practical communication guidance grounded in research. It is designed to help school leaders
+            strengthen clarity, reduce friction, and communicate more effectively with internationally diverse teaching teams.
+        </p>
+        <div class="cta-center">
+            <a href="https://payhip.com/b/6Tik2" class="btn-primary" target="_blank">Get the Toolkit</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="final-cta">
+            <h2>Build stronger communication systems</h2>
+            <p>Access structured templates and practical support designed to help school leaders communicate with more consistency and confidence.</p>
+            <a href="https://payhip.com/b/6Tik2" class="btn-primary" target="_blank">Get the Toolkit</a>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p>BridgeEDU | Developed by Neville O’Callaghan</p>
