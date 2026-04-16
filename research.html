@@ -1,136 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research | BridgeEDU</title>
-    <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f8fb; color: #243b53; }
-        header { background-color: #1e3a5f; color: white; padding: 18px 20px; border-bottom: 4px solid #ff7a00; }
-        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; text-align: center; }
-        .site-logo { height: 68px; width: auto; display: block; }
-        .site-brand h1 { margin: 0; font-size: 2rem; line-height: 1.1; }
-        .site-brand p { margin: 6px 0 0; font-size: 0.98rem; opacity: 0.95; }
-        nav { background-color: #16324f; padding: 12px 10px; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; font-size: 0.98rem; display: inline-block; }
-        nav a:hover { text-decoration: underline; }
-        .page-hero { background-color: #eaf2fb; padding: 60px 20px; border-bottom: 1px solid #d6e3f2; }
-        .page-hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
-        .page-hero h2 { margin: 0 0 14px; font-size: 2.4rem; color: #1e3a5f; }
-        .page-hero p { margin: 0 auto; max-width: 760px; font-size: 1.08rem; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .section { margin-bottom: 70px; }
-        .section h2 { color: #1e3a5f; font-size: 2rem; margin-bottom: 18px; }
-        .intro-text { font-size: 1.08rem; max-width: 850px; }
-        .highlight-box { background-color: #eaf2fb; border-left: 6px solid #ff7a00; padding: 24px; border-radius: 10px; margin-top: 30px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 30px; }
-        .card { background-color: white; border-radius: 14px; padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-top: 5px solid #1e3a5f; }
-        .card h3 { color: #1e3a5f; margin-top: 0; }
-        .btn-primary, .btn-secondary { display: inline-block; padding: 14px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.2s ease; }
-        .btn-primary { background-color: #ff7a00; color: white; }
-        .btn-primary:hover { background-color: #e66a00; }
-        .btn-secondary { background-color: transparent; color: #1e3a5f; border: 2px solid #1e3a5f; }
-        .btn-secondary:hover { background-color: #eef5fc; }
-        .cta-center { text-align: center; margin-top: 30px; }
-        .final-cta { background-color: #1e3a5f; color: white; border-radius: 16px; padding: 45px 30px; text-align: center; }
-        .final-cta h2 { color: white; margin-top: 0; }
-        .final-cta p { max-width: 760px; margin: 0 auto 24px; font-size: 1.06rem; }
-        footer { background-color: #16324f; color: white; text-align: center; padding: 24px 20px; font-size: 0.95rem; }
-        @media (max-width: 768px) {
-            .site-brand h1 { font-size: 1.7rem; }
-            .page-hero h2 { font-size: 2rem; }
-            nav a { margin: 6px 10px; }
-            .site-logo { height: 58px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | BridgeEDU</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2d3d;
+      background: #f4f7fb;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .site-header {
+      background: #eef3f8;
+      padding: 16px 20px 14px;
+      border-bottom: 4px solid #f28c28;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      text-align: left;
+    }
+
+    .site-logo {
+      height: 74px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .site-branding {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 2.6rem;
+      line-height: 1.05;
+      color: #1f3b5c;
+      font-weight: 700;
+    }
+
+    .site-tagline {
+      margin: 8px 0 0;
+      font-size: 1rem;
+      color: #3f5874;
+    }
+
+    .main-nav {
+      background: #1f3b5c;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 0;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .nav-links a.active {
+      box-shadow: inset 0 -3px 0 #f28c28;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4a6a8f 0%, #5c7da3 100%);
+      color: #ffffff;
+      padding: 76px 20px;
+    }
+
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h2 {
+      margin: 0 0 18px;
+      font-size: 3rem;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 820px;
+      margin: 0 auto 30px;
+      font-size: 1.15rem;
+      color: #e9f0f7;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-primary {
+      background: #f28c28;
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #1f3b5c;
+    }
+
+    .content-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h3 {
+      margin: 0 0 12px;
+      font-size: 2.1rem;
+      color: #1f3b5c;
+    }
+
+    .section-heading p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: #4c5d70;
+      font-size: 1.03rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(20, 40, 70, 0.08);
+      border-top: 4px solid #f28c28;
+    }
+
+    .card h4 {
+      margin: 0 0 12px;
+      color: #1f3b5c;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #4c5d70;
+    }
+
+    .split-section {
+      background: #ffffff;
+      padding: 72px 20px;
+    }
+
+    .split-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .split-text h3 {
+      margin: 0 0 16px;
+      color: #1f3b5c;
+      font-size: 2rem;
+    }
+
+    .split-text p {
+      margin: 0 0 16px;
+      color: #4c5d70;
+      font-size: 1.02rem;
+    }
+
+    .feature-panel {
+      background: #f4f7fb;
+      border-left: 5px solid #f28c28;
+      border-radius: 12px;
+      padding: 26px;
+    }
+
+    .feature-panel h4 {
+      margin: 0 0 14px;
+      color: #1f3b5c;
+      font-size: 1.15rem;
+    }
+
+    .feature-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #4c5d70;
+    }
+
+    .feature-panel li {
+      margin-bottom: 10px;
+    }
+
+    .quote-section {
+      background: #eef3f8;
+      padding: 72px 20px;
+    }
+
+    .quote-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-inner blockquote {
+      margin: 0;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: #1f3b5c;
+      font-weight: 700;
+    }
+
+    .quote-inner p {
+      margin: 18px 0 0;
+      color: #4c5d70;
+      font-size: 1rem;
+    }
+
+    .cta-section {
+      background: #1f3b5c;
+      color: #ffffff;
+      padding: 64px 20px;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+    }
+
+    .cta-section p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      color: #dbe5f0;
+    }
+
+    footer {
+      background: #10263b;
+      color: #dbe5f0;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 820px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .site-title {
+        font-size: 2.3rem;
+      }
+
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+
+      .split-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-logo {
+        height: 72px;
+      }
+
+      .site-title {
+        font-size: 2rem;
+      }
+
+      .site-tagline {
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        padding: 62px 20px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p,
+      .split-text p,
+      .section-heading p {
+        font-size: 1rem;
+      }
+
+      .quote-inner blockquote {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
+  <header class="site-header">
     <div class="header-inner">
-        <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
-        <div class="site-brand">
-            <h1>BridgeEDU</h1>
-            <p>Developed by Neville O’Callaghan</p>
-        </div>
+      <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
+      <div class="site-branding">
+        <h1 class="site-title">BridgeEDU</h1>
+        <p class="site-tagline">Clear communication across cultures, classrooms, and leadership</p>
+      </div>
     </div>
-</header>
+  </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="teachers.html">Teachers</a>
-    <a href="leaders.html">School Leaders</a>
-    <a href="research.html">Research</a>
-    <a href="resources.html">Resources</a>
-    <a href="toolkit.html">Toolkit</a>
-</nav>
-
-<section class="page-hero">
-    <div class="page-hero-inner">
-        <h2>The Research Behind BridgeEDU</h2>
-        <p>A research-based foundation focused on improving communication in educational environments shaped by language, culture, and technology.</p>
+  <nav class="main-nav">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="leaders.html">School Leaders</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="resources.html">Resources</a>
+      <a href="toolkit.html">Toolkit</a>
     </div>
-</section>
+  </nav>
 
-<main class="container">
-    <section class="section">
-        <h2>A practical research foundation</h2>
-        <p class="intro-text">
-            BridgeEDU is grounded in Master’s-level research examining communication between school leaders and foreign English language teachers.
-            The wider study explored how ICT, communication structure, and intercultural context can shape the effectiveness of school communication.
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Research Foundation</h2>
+      <p>
+        BridgeEDU is grounded in postgraduate research exploring communication between foreign teachers and school leaders in multilingual and intercultural educational settings. This page explains the thinking behind the project in a clear and accessible way.
+      </p>
+      <div class="button-group">
+        <a href="about.html" class="btn btn-primary">About the Project</a>
+        <a href="toolkit.html" class="btn btn-secondary">Explore the Toolkit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <h3>What this research focused on</h3>
+      <p>
+        The broader research behind BridgeEDU examined how communication works between foreign English language teachers and school leaders in educational environments shaped by language difference, cultural diversity, institutional expectations, and digital communication tools.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Communication across roles</h4>
+        <p>
+          The project considered how teachers and leaders interact professionally when their responsibilities, expectations, and communication styles may not always align neatly.
         </p>
-        <div class="highlight-box">
-            The main message is clear: technology can support communication, but clarity, consistency, and implementation matter most.
-        </div>
-    </section>
+      </div>
 
-    <section class="section">
-        <h2>What the research suggests</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Communication is shaped by context</h3>
-                <p>School communication does not happen in a vacuum. Language, hierarchy, culture, and digital habits all affect interpretation.</p>
-            </div>
-            <div class="card">
-                <h3>Clarity matters more than volume</h3>
-                <p>More messages do not necessarily improve understanding. Clearer messages are usually more effective than more frequent ones.</p>
-            </div>
-            <div class="card">
-                <h3>ICT can help when used well</h3>
-                <p>Digital tools can reduce barriers, but only when they are used with structure and shared expectations.</p>
-            </div>
-            <div class="card">
-                <h3>Practical application is essential</h3>
-                <p>Research becomes valuable when it is translated into realistic actions that people can use in their daily work.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>From research to action</h2>
-        <p class="intro-text">
-            BridgeEDU takes research findings and turns them into clear guidance, practical templates, and structured resources
-            that teachers and school leaders can use in real communication scenarios.
+      <div class="card">
+        <h4>Intercultural educational contexts</h4>
+        <p>
+          The research was shaped by the reality that multilingual schools often operate across different cultural assumptions about clarity, hierarchy, formality, and professional interaction.
         </p>
-        <div class="cta-center">
-            <a href="resources.html" class="btn-secondary">View Resources</a>
-        </div>
-    </section>
+      </div>
 
-    <section class="section">
-        <div class="final-cta">
-            <h2>Put the research into practice</h2>
-            <p>The BridgeEDU Toolkit turns research-based insight into clear, practical support for everyday school communication.</p>
-            <a href="https://payhip.com/b/6Tik2" class="btn-primary" target="_blank">Get the Toolkit</a>
-        </div>
-    </section>
-</main>
+      <div class="card">
+        <h4>Practical educational value</h4>
+        <p>
+          Rather than stopping at theory, the wider purpose was to identify insights that could support clearer communication in real school environments.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-    <p>BridgeEDU | Developed by Neville O’Callaghan</p>
-</footer>
+  <section class="split-section">
+    <div class="split-inner">
+      <div class="split-text">
+        <h3>Why the research matters here</h3>
+        <p>
+          A website like BridgeEDU needs more than a good idea behind it. It also needs a genuine foundation. The research matters because it helps show that the communication issues addressed here are not random observations or isolated frustrations. They reflect broader patterns that can shape working relationships, confidence, interpretation, and daily professional life in schools.
+        </p>
+        <p>
+          That does not mean every school looks the same. It means there is enough substance behind these themes to justify building better support around them. BridgeEDU takes that step by turning insight into clearer explanation, practical pathways, and usable materials.
+        </p>
+        <p>
+          This page is not intended to reproduce an academic chapter in website form. It is here to give visitors confidence that the project has depth, credibility, and a serious purpose.
+        </p>
+      </div>
+
+      <div class="feature-panel">
+        <h4>What visitors may want to know</h4>
+        <ul>
+          <li>the project is grounded in real academic work, not guesswork</li>
+          <li>the communication challenges discussed here have a broader educational basis</li>
+          <li>the website is designed to make research insight more accessible</li>
+          <li>the eventual products are rooted in a clear and credible foundation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-inner">
+      <blockquote>
+        Research matters most when it helps people understand a real problem more clearly and move towards something more useful.
+      </blockquote>
+      <p>
+        That principle sits at the heart of BridgeEDU.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <h3>How the research was approached</h3>
+      <p>
+        The wider thesis behind BridgeEDU used a structured quantitative approach to examine communication in educational settings from more than one angle. The aim was to build a clearer picture of the issue rather than rely on one single source of insight.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Research synthesis</h4>
+        <p>
+          One part of the work examined existing studies to identify patterns and relationships connected to communication, ICT use, and intercultural educational settings.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Teacher perspectives</h4>
+        <p>
+          Another part explored the views of foreign English language teachers working in relevant contexts, helping to connect broader research patterns with lived professional experience.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Applied interpretation</h4>
+        <p>
+          The value of the project was not only in analysing data, but in interpreting what those findings may mean for clearer professional communication in schools.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="split-inner">
+      <div class="split-text">
+        <h3>What this means for BridgeEDU visitors</h3>
+        <p>
+          For visitors, the research page helps answer an important question: why trust this platform? The answer is not that research solves everything on its own. The answer is that it gives the project weight, direction, and legitimacy.
+        </p>
+        <p>
+          That matters when people are deciding whether to read further, use a resource, or eventually invest in a product. A strong foundation helps visitors feel that the material has been thought through carefully and developed for a genuine educational purpose.
+        </p>
+        <p>
+          In that sense, this page is part of the bridge between credibility and practical value.
+        </p>
+        <a href="resources.html" class="btn btn-primary">View Resources</a>
+      </div>
+
+      <div class="feature-panel">
+        <h4>Why this supports future products</h4>
+        <ul>
+          <li>it gives context before asking visitors to trust a toolkit or resource</li>
+          <li>it strengthens the educational credibility of the website</li>
+          <li>it helps distinguish BridgeEDU from generic advice sites</li>
+          <li>it supports the long-term value of future communication products</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <h3>Research translated into practical direction</h3>
+      <p>
+        The ultimate purpose of BridgeEDU is not simply to present findings. It is to create something useful from them. That means moving from research insight towards language, guidance, resources, and tools that can support clearer communication in real educational settings.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Clearer explanation</h4>
+        <p>
+          Research can help people name and understand communication problems that might otherwise feel vague or personal.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Better guidance</h4>
+        <p>
+          When findings are interpreted carefully, they can support more thoughtful and practical advice for teachers and school leaders.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Stronger tools</h4>
+        <p>
+          Products built on a credible foundation have a stronger chance of being useful, relevant, and worth returning to.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3>Ready to see the practical side of the research?</h3>
+    <p>
+      Explore the resources and toolkit that build on this research foundation and turn communication insight into something clearer, more structured, and more usable.
+    </p>
+    <div class="button-group">
+      <a href="toolkit.html" class="btn btn-primary">Go to the Toolkit</a>
+      <a href="resources.html" class="btn btn-secondary">Browse Resources</a>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>BridgeEDU</strong></p>
+    <p>Developed by Neville O’Callaghan</p>
+    <p>&copy; 2026 BridgeEDU. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
