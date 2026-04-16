@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BridgeEDU | Clear Communication Across Cultures, Classrooms, and Leadership</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -21,60 +22,41 @@
       text-decoration: none;
     }
 
+    /* HEADER */
+
     .site-header {
       background: #1f3b5c;
-      padding: 22px 20px 18px;
+      padding: 22px 20px 14px;
       border-bottom: 4px solid #f28c28;
     }
 
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-    }
-
-    .logo-wrap {
-      background: #ffffff;
-      padding: 10px 14px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
     }
 
     .site-logo {
-      height: 72px;
-      width: auto;
-      display: block;
-    }
-
-    .site-title-group {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      height: 60px;
+      margin-bottom: 10px;
     }
 
     .site-title {
       margin: 0;
       color: #ffffff;
       font-size: 2.2rem;
-      line-height: 1.1;
     }
 
     .site-tagline {
       margin: 6px 0 0;
       color: #dbe5f0;
       font-size: 0.95rem;
-      line-height: 1.4;
-      letter-spacing: 0.2px;
     }
+
+    /* NAV */
 
     .main-nav {
       background: #17324d;
-      padding: 0 20px;
     }
 
     .nav-links {
@@ -82,10 +64,9 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      align-items: center;
+      gap: 12px;
+      padding: 14px 10px;
       flex-wrap: wrap;
-      gap: 10px;
-      padding: 14px 0;
     }
 
     .nav-links a {
@@ -93,49 +74,39 @@
       font-weight: 600;
       padding: 10px 14px;
       border-radius: 8px;
-      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(255, 255, 255, 0.16);
-      color: #ffffff;
+      background: rgba(255,255,255,0.15);
     }
 
     .nav-links a.active {
       box-shadow: inset 0 -3px 0 #f28c28;
     }
 
+    /* HERO */
+
     .hero {
-      background: linear-gradient(rgba(31, 59, 92, 0.88), rgba(31, 59, 92, 0.88));
+      background: #3f5d82;
       color: #ffffff;
       padding: 70px 20px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
       text-align: center;
     }
 
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     .hero h2 {
-      margin: 0 0 18px;
-      font-size: 2.4rem;
-      line-height: 1.2;
+      margin-bottom: 16px;
+      font-size: 2.2rem;
     }
 
     .hero p {
-      max-width: 780px;
-      margin: 0 auto 28px;
-      font-size: 1.08rem;
+      margin-bottom: 28px;
       color: #e6eef7;
-    }
-
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
     }
 
     .btn {
@@ -143,12 +114,7 @@
       padding: 12px 22px;
       border-radius: 8px;
       font-weight: 700;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.95;
+      margin: 5px;
     }
 
     .btn-primary {
@@ -160,6 +126,8 @@
       background: #ffffff;
       color: #1f3b5c;
     }
+
+    /* CONTENT */
 
     .content-section {
       max-width: 1100px;
@@ -173,14 +141,14 @@
     }
 
     .section-heading h3 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+      margin-bottom: 10px;
       color: #1f3b5c;
+      font-size: 2rem;
     }
 
     .section-heading p {
+      max-width: 750px;
       margin: 0 auto;
-      max-width: 760px;
       color: #4c5d70;
     }
 
@@ -192,17 +160,15 @@
 
     .card {
       background: #ffffff;
-      border-radius: 14px;
-      padding: 26px;
-      box-shadow: 0 8px 24px rgba(20, 40, 70, 0.08);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
       border-top: 4px solid #f28c28;
     }
 
     .card h4 {
-      margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #1f3b5c;
-      font-size: 1.2rem;
     }
 
     .card p {
@@ -210,120 +176,59 @@
       color: #4c5d70;
     }
 
-    .highlight-section {
-      background: #ffffff;
-      padding: 60px 20px;
-    }
-
-    .highlight-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .highlight-text h3 {
-      margin-top: 0;
-      color: #1f3b5c;
-      font-size: 2rem;
-    }
-
-    .highlight-text p {
-      color: #4c5d70;
-      margin-bottom: 18px;
-    }
-
-    .highlight-box {
-      background: #f4f7fb;
-      border-left: 5px solid #f28c28;
-      padding: 24px;
-      border-radius: 12px;
-    }
-
-    .highlight-box h4 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      color: #1f3b5c;
-    }
-
-    .highlight-box p {
-      margin: 0;
-      color: #4c5d70;
-    }
+    /* CTA */
 
     .cta-section {
       background: #1f3b5c;
       color: #ffffff;
-      padding: 60px 20px;
       text-align: center;
+      padding: 60px 20px;
     }
 
     .cta-section h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
     .cta-section p {
-      max-width: 760px;
-      margin: 0 auto 24px;
+      margin-bottom: 20px;
       color: #dbe5f0;
     }
+
+    /* FOOTER */
 
     footer {
       background: #10263b;
       color: #dbe5f0;
       text-align: center;
-      padding: 24px 20px;
-      font-size: 0.95rem;
+      padding: 24px;
     }
 
     footer p {
       margin: 6px 0;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
-      .header-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 14px;
-      }
-
-      .site-title {
-        font-size: 1.8rem;
-      }
-
-      .site-tagline {
-        font-size: 0.9rem;
-      }
-
       .hero h2 {
-        font-size: 2rem;
-      }
-
-      .highlight-inner {
-        grid-template-columns: 1fr;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo-wrap">
-        <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
-      </div>
-
-      <div class="site-title-group">
-        <h1 class="site-title">BridgeEDU</h1>
-        <p class="site-tagline">Clear communication across cultures, classrooms, and leadership</p>
-      </div>
+      <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
+      <h1 class="site-title">BridgeEDU</h1>
+      <p class="site-tagline">Clear communication across cultures, classrooms, and leadership</p>
     </div>
   </header>
 
+  <!-- NAV -->
   <nav class="main-nav">
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -336,117 +241,57 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <h2>Supporting clearer communication in multilingual school environments</h2>
       <p>
-        BridgeEDU helps teachers and school leaders navigate the real communication challenges that arise across language, culture, expectations, and educational practice.
+        BridgeEDU helps teachers and school leaders navigate real communication challenges across language, culture, expectations, and educational practice.
       </p>
-      <div class="button-group">
-        <a href="about.html" class="btn btn-primary">Learn More</a>
-        <a href="toolkit.html" class="btn btn-secondary">Explore the Toolkit</a>
-      </div>
+      <a href="about.html" class="btn btn-primary">Learn More</a>
+      <a href="toolkit.html" class="btn btn-secondary">Explore the Toolkit</a>
     </div>
   </section>
 
+  <!-- SECTION -->
   <section class="content-section">
     <div class="section-heading">
       <h3>Why BridgeEDU matters</h3>
       <p>
-        In many schools, communication problems are not caused by a lack of goodwill. They often grow from unclear expectations, different cultural assumptions, language barriers, and the everyday pressures of school life.
+        Communication issues in schools are rarely about intent. They arise from differences in language, expectations, culture, and everyday pressures.
       </p>
     </div>
 
     <div class="card-grid">
       <div class="card">
         <h4>For teachers</h4>
-        <p>
-          Gain clearer language, more confidence, and practical support for communicating with school leaders in professional and respectful ways.
-        </p>
+        <p>Build confidence and communicate clearly with school leadership.</p>
       </div>
 
       <div class="card">
         <h4>For school leaders</h4>
-        <p>
-          Strengthen staff understanding, reduce avoidable misunderstandings, and support more effective communication across diverse teams.
-        </p>
+        <p>Improve clarity, reduce misunderstandings, and support diverse teams.</p>
       </div>
 
       <div class="card">
-        <h4>For international school contexts</h4>
-        <p>
-          Build communication practices that recognise cultural difference without losing clarity, professionalism, or mutual respect.
-        </p>
+        <h4>For international schools</h4>
+        <p>Create communication systems that work across cultures.</p>
       </div>
     </div>
   </section>
 
-  <section class="highlight-section">
-    <div class="highlight-inner">
-      <div class="highlight-text">
-        <h3>Built from research, shaped for practice</h3>
-        <p>
-          BridgeEDU is grounded in postgraduate research focused on communication between foreign teachers and school leaders in multilingual, intercultural educational settings.
-        </p>
-        <p>
-          The goal is not to overcomplicate communication. It is to make it clearer, more respectful, and more workable in the places where it matters most: schools, classrooms, and leadership relationships.
-        </p>
-        <a href="research.html" class="btn btn-primary">View Research</a>
-      </div>
-
-      <div class="highlight-box">
-        <h4>What you will find here</h4>
-        <p>
-          This website brings together research-based insight, audience-specific guidance, practical resources, and a ready-to-use communication toolkit designed for real educational settings.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="section-heading">
-      <h3>Start where you need to</h3>
-      <p>
-        Whether you are looking for context, practical support, or ready-made materials, BridgeEDU is designed to help visitors move directly to the most useful next step.
-      </p>
-    </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <h4>Understand the bigger picture</h4>
-        <p>
-          Visit the About and Research pages to understand the communication issues behind the project and why they matter in real school settings.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Find audience-specific guidance</h4>
-        <p>
-          Visit the Teachers and School Leaders pages for focused support shaped around the needs and responsibilities of each group.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Access practical tools</h4>
-        <p>
-          Visit the Resources and Toolkit pages for useful materials, structured guidance, and ready-to-use communication support.
-        </p>
-      </div>
-    </div>
-  </section>
-
+  <!-- CTA -->
   <section class="cta-section">
     <h3>Ready to explore the toolkit?</h3>
-    <p>
-      Access practical communication support designed to help teachers and school leaders communicate more clearly across multilingual and intercultural educational environments.
-    </p>
-    <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Toolkit</a>
+    <p>Access practical communication support for real school environments.</p>
+    <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank">View Toolkit</a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p><strong>BridgeEDU</strong></p>
     <p>Developed by Neville O’Callaghan</p>
-    <p>&copy; 2026 BridgeEDU. All rights reserved.</p>
+    <p>&copy; 2026 BridgeEDU</p>
   </footer>
 
 </body>
