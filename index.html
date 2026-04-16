@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BridgeEDU | Clearer Communication in Intercultural Schools</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -20,18 +18,37 @@
         header {
             background-color: #1e3a5f;
             color: white;
-            padding: 22px 20px;
+            padding: 18px 20px;
+            border-bottom: 4px solid #ff7a00;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
+        .site-logo {
+            height: 68px;
+            width: auto;
+            display: block;
         }
 
-        header p {
-            margin: 8px 0 0;
-            font-size: 1rem;
+        .site-brand h1 {
+            margin: 0;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+
+        .site-brand p {
+            margin: 6px 0 0;
+            font-size: 0.98rem;
+            opacity: 0.95;
         }
 
         nav {
@@ -46,41 +63,33 @@
             margin: 0 12px;
             font-weight: bold;
             font-size: 0.98rem;
+            display: inline-block;
         }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+        nav a:hover { text-decoration: underline; }
 
         .hero {
-            background: linear-gradient(rgba(30, 58, 95, 0.88), rgba(30, 58, 95, 0.88)),
-                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            color: white;
-            padding: 90px 20px;
+            background-color: #eaf2fb;
+            padding: 70px 20px;
+            border-bottom: 1px solid #d6e3f2;
         }
 
-        .hero-content {
+        .hero-inner {
             max-width: 1100px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .hero h2 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin: 0 0 20px;
-            max-width: 700px;
+            margin: 0 0 18px;
+            font-size: 2.6rem;
+            color: #1e3a5f;
         }
 
         .hero p {
-            font-size: 1.15rem;
-            max-width: 760px;
-            margin: 0 0 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            max-width: 820px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
         }
 
         .btn-primary,
@@ -91,6 +100,7 @@
             text-decoration: none;
             font-weight: bold;
             transition: 0.2s ease;
+            margin: 6px;
         }
 
         .btn-primary {
@@ -98,19 +108,15 @@
             color: white;
         }
 
-        .btn-primary:hover {
-            background-color: #e66a00;
-        }
+        .btn-primary:hover { background-color: #e66a00; }
 
         .btn-secondary {
             background-color: transparent;
-            color: white;
-            border: 2px solid white;
+            color: #1e3a5f;
+            border: 2px solid #1e3a5f;
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.12);
-        }
+        .btn-secondary:hover { background-color: #eef5fc; }
 
         .container {
             max-width: 1100px;
@@ -118,9 +124,7 @@
             padding: 60px 20px;
         }
 
-        .section {
-            margin-bottom: 70px;
-        }
+        .section { margin-bottom: 70px; }
 
         .section h2 {
             color: #1e3a5f;
@@ -129,8 +133,16 @@
         }
 
         .intro-text {
-            font-size: 1.12rem;
-            max-width: 850px;
+            font-size: 1.08rem;
+            max-width: 860px;
+        }
+
+        .highlight-box {
+            background-color: #eaf2fb;
+            border-left: 6px solid #ff7a00;
+            padding: 24px;
+            border-radius: 10px;
+            margin-top: 28px;
         }
 
         .grid {
@@ -151,15 +163,6 @@
         .card h3 {
             margin-top: 0;
             color: #1e3a5f;
-            font-size: 1.25rem;
-        }
-
-        .highlight-box {
-            background-color: #eaf2fb;
-            border-left: 6px solid #ff7a00;
-            padding: 28px;
-            border-radius: 10px;
-            margin-top: 30px;
         }
 
         .pathways {
@@ -190,9 +193,7 @@
             text-decoration: none;
         }
 
-        .pathway-card a:hover {
-            text-decoration: underline;
-        }
+        .pathway-card a:hover { text-decoration: underline; }
 
         .final-cta {
             background-color: #1e3a5f;
@@ -209,8 +210,8 @@
 
         .final-cta p {
             max-width: 760px;
-            margin: 0 auto 25px;
-            font-size: 1.08rem;
+            margin: 0 auto 24px;
+            font-size: 1.06rem;
         }
 
         footer {
@@ -222,26 +223,23 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 70px 20px;
-            }
-
-            .hero h2 {
-                font-size: 2.1rem;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 6px 10px;
-            }
+            .site-brand h1 { font-size: 1.7rem; }
+            .hero h2 { font-size: 2.1rem; }
+            nav a { margin: 6px 10px; }
+            .site-logo { height: 58px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>BridgeEDU</h1>
-    <p>Research-based communication support for intercultural school environments</p>
+    <div class="header-inner">
+        <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
+        <div class="site-brand">
+            <h1>BridgeEDU</h1>
+            <p>Developed by Neville O’Callaghan</p>
+        </div>
+    </div>
 </header>
 
 <nav>
@@ -255,33 +253,31 @@
 </nav>
 
 <section class="hero">
-    <div class="hero-content">
+    <div class="hero-inner">
         <h2>Clearer communication for teachers and school leaders</h2>
         <p>
-            BridgeEDU helps schools strengthen communication across language, cultural, and digital barriers.
-            Built from academic research and real teaching experience, it turns communication challenges into
-            practical, usable solutions.
+            BridgeEDU supports stronger communication across language, cultural, and digital barriers
+            in educational settings. It brings together research, practical insight, and usable tools
+            to help schools communicate with more clarity and less confusion.
         </p>
-        <div class="hero-buttons">
-            <a href="toolkit.html" class="btn-primary">Get the Toolkit</a>
-            <a href="about.html" class="btn-secondary">Learn More</a>
-        </div>
+        <a href="toolkit.html" class="btn-primary">Get the Toolkit</a>
+        <a href="about.html" class="btn-secondary">Learn More</a>
     </div>
 </section>
 
 <main class="container">
-
     <section class="section">
         <h2>Why BridgeEDU matters</h2>
         <p class="intro-text">
-            In many schools, communication breaks down not because people do not care, but because messages are unclear,
-            expectations are inconsistent, and intercultural differences are not always recognised. BridgeEDU was created
-            to support more effective communication between foreign teachers and school leaders in multilingual, cross-cultural settings.
+            In many school environments, communication breaks down not because people lack commitment,
+            but because messages are unclear, expectations are inconsistent, and intercultural differences
+            are not always recognised. BridgeEDU was created to help address those issues in a practical,
+            professional, and research-based way.
         </p>
-
         <div class="highlight-box">
-            <strong>BridgeEDU focuses on practical improvement.</strong> It is not just about theory, and it is not just
-            about technology. It is about helping people communicate more clearly, more consistently, and with fewer misunderstandings.
+            <strong>BridgeEDU is focused on practical improvement.</strong> It is not just about theory,
+            and it is not just about technology. It is about helping teachers and school leaders communicate
+            more clearly, more consistently, and with fewer misunderstandings.
         </div>
     </section>
 
@@ -290,30 +286,19 @@
         <div class="grid">
             <div class="card">
                 <h3>For Teachers</h3>
-                <p>
-                    Practical support for handling unclear instructions, digital communication, and intercultural workplace expectations.
-                </p>
+                <p>Practical support for handling unclear instructions, digital communication, and intercultural workplace expectations.</p>
             </div>
-
             <div class="card">
                 <h3>For School Leaders</h3>
-                <p>
-                    Clearer ways to communicate expectations, improve consistency, and reduce misunderstandings across teams.
-                </p>
+                <p>Clearer ways to communicate expectations, improve consistency, and support staff more effectively.</p>
             </div>
-
             <div class="card">
                 <h3>Research-Based Insight</h3>
-                <p>
-                    A strong academic foundation translated into plain, useful guidance for real educational settings.
-                </p>
+                <p>A strong academic foundation translated into plain, useful guidance for real educational settings.</p>
             </div>
-
             <div class="card">
                 <h3>Ready-to-Use Toolkit</h3>
-                <p>
-                    Structured templates, examples, and communication supports designed for immediate use.
-                </p>
+                <p>Structured templates, examples, and communication supports designed for immediate use.</p>
             </div>
         </div>
     </section>
@@ -321,8 +306,9 @@
     <section class="section">
         <h2>Designed for real school environments</h2>
         <p class="intro-text">
-            BridgeEDU is especially relevant for international schools, bilingual schools, private education settings,
-            and workplaces where communication takes place across different first languages, cultural norms, and digital platforms.
+            BridgeEDU is especially relevant for international schools, bilingual schools, private education
+            settings, and workplaces where communication takes place across different first languages,
+            cultural expectations, and digital platforms.
         </p>
         <p class="intro-text">
             The aim is simple: help schools move from avoidable confusion towards clearer professional communication.
@@ -334,17 +320,12 @@
         <div class="pathways">
             <div class="pathway-card">
                 <h3>I am a teacher</h3>
-                <p>
-                    Explore practical strategies and communication support designed for foreign teachers working in intercultural settings.
-                </p>
+                <p>Explore practical strategies and communication support designed for foreign teachers working in intercultural settings.</p>
                 <a href="teachers.html">Go to Teachers →</a>
             </div>
-
             <div class="pathway-card">
                 <h3>I am a school leader</h3>
-                <p>
-                    Explore ways to strengthen communication systems, improve clarity, and support staff more effectively.
-                </p>
+                <p>Explore ways to strengthen communication systems, improve clarity, and support staff more effectively.</p>
                 <a href="leaders.html">Go to School Leaders →</a>
             </div>
         </div>
@@ -353,13 +334,10 @@
     <section class="section">
         <div class="final-cta">
             <h2>Ready for practical support?</h2>
-            <p>
-                The BridgeEDU Toolkit brings the research, strategies, and templates together in one clear, usable resource.
-            </p>
+            <p>The BridgeEDU Toolkit brings the research, strategies, and templates together in one clear, usable resource.</p>
             <a href="https://payhip.com/b/6Tik2" class="btn-primary" target="_blank">Get the Toolkit</a>
         </div>
     </section>
-
 </main>
 
 <footer>
