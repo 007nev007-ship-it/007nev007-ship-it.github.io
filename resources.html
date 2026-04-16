@@ -4,103 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources | BridgeEDU</title>
-
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f4f8fb;
-            color: #333;
-        }
-
-        header {
-            background-color: #1e3a5f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #16324f;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1, h2 {
-            color: #1e3a5f;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .highlight {
-            background-color: #e8f1fb;
-            padding: 20px;
-            border-left: 5px solid #1e3a5f;
-            margin: 30px 0;
-        }
-
-        .resource-box {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #1e3a5f;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .cta {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .cta a {
-            background-color: #ff7a00;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .cta a:hover {
-            background-color: #e66a00;
-        }
-
-        footer {
-            background-color: #1e3a5f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f8fb; color: #243b53; }
+        header { background-color: #1e3a5f; color: white; padding: 18px 20px; border-bottom: 4px solid #ff7a00; }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; text-align: center; }
+        .site-logo { height: 68px; width: auto; display: block; }
+        .site-brand h1 { margin: 0; font-size: 2rem; line-height: 1.1; }
+        .site-brand p { margin: 6px 0 0; font-size: 0.98rem; opacity: 0.95; }
+        nav { background-color: #16324f; padding: 12px 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; font-size: 0.98rem; display: inline-block; }
+        nav a:hover { text-decoration: underline; }
+        .page-hero { background-color: #eaf2fb; padding: 60px 20px; border-bottom: 1px solid #d6e3f2; }
+        .page-hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .page-hero h2 { margin: 0 0 14px; font-size: 2.4rem; color: #1e3a5f; }
+        .page-hero p { margin: 0 auto; max-width: 760px; font-size: 1.08rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .section { margin-bottom: 70px; }
+        .section h2 { color: #1e3a5f; font-size: 2rem; margin-bottom: 18px; }
+        .intro-text { font-size: 1.08rem; max-width: 850px; }
+        .highlight-box { background-color: #eaf2fb; border-left: 6px solid #ff7a00; padding: 24px; border-radius: 10px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 30px; }
+        .card { background-color: white; border-radius: 14px; padding: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-top: 5px solid #1e3a5f; }
+        .card h3 { color: #1e3a5f; margin-top: 0; }
+        .btn-primary, .btn-secondary { display: inline-block; padding: 14px 26px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.2s ease; }
+        .btn-primary { background-color: #ff7a00; color: white; }
+        .btn-primary:hover { background-color: #e66a00; }
+        .btn-secondary { background-color: transparent; color: #1e3a5f; border: 2px solid #1e3a5f; }
+        .btn-secondary:hover { background-color: #eef5fc; }
+        .cta-center { text-align: center; margin-top: 30px; }
+        .final-cta { background-color: #1e3a5f; color: white; border-radius: 16px; padding: 45px 30px; text-align: center; }
+        .final-cta h2 { color: white; margin-top: 0; }
+        .final-cta p { max-width: 760px; margin: 0 auto 24px; font-size: 1.06rem; }
+        footer { background-color: #16324f; color: white; text-align: center; padding: 24px 20px; font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            .site-brand h1 { font-size: 1.7rem; }
+            .page-hero h2 { font-size: 2rem; }
+            nav a { margin: 6px 10px; }
+            .site-logo { height: 58px; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <h1>BridgeEDU</h1>
-    <p>Practical Resources for Everyday School Communication</p>
+    <div class="header-inner">
+        <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
+        <div class="site-brand">
+            <h1>BridgeEDU</h1>
+            <p>Developed by Neville O’Callaghan</p>
+        </div>
+    </div>
 </header>
 
 <nav>
@@ -113,80 +67,66 @@
     <a href="toolkit.html">Toolkit</a>
 </nav>
 
-<div class="container">
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <h2>Resources</h2>
+        <p>Practical materials and communication support for everyday use in multilingual and intercultural school settings.</p>
+    </div>
+</section>
 
-    <div class="section">
-        <h1>Resources</h1>
-        <p>
-            This section provides practical tools and guidance to support communication 
-            in intercultural school environments.
+<main class="container">
+    <section class="section">
+        <h2>Why resources matter</h2>
+        <p class="intro-text">
+            Communication challenges are not solved by theory alone. Teachers and leaders often need examples,
+            structure, and clear language they can apply immediately. This section is focused on practical support.
         </p>
-        <p>
-            These resources are designed to be simple, clear, and immediately usable.
+        <div class="highlight-box">
+            BridgeEDU resources are designed to be simple, professional, and immediately usable in real school communication.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>What the resources are designed to support</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Message clarity</h3>
+                <p>Support for making communication shorter, clearer, and easier to interpret correctly.</p>
+            </div>
+            <div class="card">
+                <h3>Professional tone</h3>
+                <p>Guidance for writing messages that are respectful, direct, and suitable for school environments.</p>
+            </div>
+            <div class="card">
+                <h3>Daily school situations</h3>
+                <p>Usable examples and structures relevant to the kinds of communication that happen every day in schools.</p>
+            </div>
+            <div class="card">
+                <h3>Cross-cultural awareness</h3>
+                <p>Practical support for reducing misunderstandings where different communication norms may be involved.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Next step</h2>
+        <p class="intro-text">
+            The full toolkit brings these ideas together in a more structured format, with templates and practical communication support
+            designed for immediate use.
         </p>
-    </div>
-
-    <div class="section highlight">
-        <h2>Why Resources Matter</h2>
-        <p>
-            Communication challenges are rarely solved by theory alone. 
-            Teachers and school leaders need clear examples and structured approaches 
-            that can be applied in real situations.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Available Resources</h2>
-
-        <div class="resource-box">
-            <h3>Communication Templates</h3>
-            <p>
-                Ready-to-use message structures for common school situations, 
-                designed to reduce misunderstanding and improve clarity.
-            </p>
+        <div class="cta-center">
+            <a href="toolkit.html" class="btn-secondary">View the Toolkit</a>
         </div>
+    </section>
 
-        <div class="resource-box">
-            <h3>ICT Communication Strategies</h3>
-            <p>
-                Simple approaches to using digital tools effectively without creating confusion or overload.
-            </p>
+    <section class="section">
+        <div class="final-cta">
+            <h2>Access the complete resource pack</h2>
+            <p>The BridgeEDU Toolkit brings together communication templates, guidance, and structured support in one place.</p>
+            <a href="https://payhip.com/b/6Tik2" class="btn-primary" target="_blank">Get the Toolkit</a>
         </div>
-
-        <div class="resource-box">
-            <h3>Intercultural Communication Tips</h3>
-            <p>
-                Practical guidance to help bridge cultural differences in school communication.
-            </p>
-        </div>
-
-        <div class="resource-box">
-            <h3>Real-World Examples</h3>
-            <p>
-                Clear examples of effective communication in everyday school contexts.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="cta">
-        <h2>Access Complete Resource Pack</h2>
-        <p>All templates and tools are available in one structured toolkit.</p>
-        <a href="https://payhip.com/b/6Tik2" target="_blank">Get the Toolkit</a>
-    </div>
-
-    <div class="section">
-        <h2>Next Step</h2>
-        <p>
-            Explore the full toolkit designed to bring all resources together in a clear, usable format.
-        </p>
-
-        <div class="cta">
-            <a href="toolkit.html">View the Toolkit →</a>
-        </div>
-    </div>
-
-</div>
+    </section>
+</main>
 
 <footer>
     <p>BridgeEDU | Developed by Neville O’Callaghan</p>
