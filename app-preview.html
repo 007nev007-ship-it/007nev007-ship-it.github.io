@@ -7,114 +7,162 @@
   <title>BridgeEDU App Preview</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #10243f;
-      color: white;
-      text-align: center;
+
+    *{
+      box-sizing:border-box;
     }
 
-    .container {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(180deg,#10243f 0%, #18365e 100%);
+      color:white;
+      text-align:center;
     }
 
-    h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-      color: #f5f5f5;
-      line-height: 1.1;
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:70px 20px 80px;
     }
 
-    p {
-      font-size: 22px;
-      line-height: 1.7;
-      color: #d7d7d7;
-      max-width: 750px;
-      margin: auto;
+    .premium-logo{
+      width:220px;
+      max-width:90%;
+      margin-bottom:35px;
+      filter:drop-shadow(0 10px 25px rgba(0,0,0,0.35));
     }
 
-    .preview-box {
-      margin-top: 50px;
-      background: #18365e;
-      border-radius: 24px;
-      padding: 50px 35px;
-      border: 2px solid #f28c28;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    h1{
+      font-size:56px;
+      line-height:1.1;
+      margin:0 0 25px;
+      color:#ffffff;
     }
 
-    .brand-badge {
-      display: inline-block;
-      margin-bottom: 35px;
-      padding: 18px 42px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #ffffff;
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    .intro{
+      max-width:780px;
+      margin:auto;
+      font-size:22px;
+      line-height:1.8;
+      color:#dce5f0;
     }
 
-    .notice {
-      margin-top: 10px;
-      font-size: 19px;
-      line-height: 1.8;
-      color: #e4e4e4;
+    .preview-box{
+      margin-top:60px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:28px;
+      padding:55px 35px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.28);
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 45px;
-      background: #f28c28;
-      color: white;
-      padding: 18px 42px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    .preview-title{
+      font-size:34px;
+      margin-bottom:20px;
+      color:#f5f5f5;
     }
 
-    .button:hover {
-      background: #ff9d3d;
-      transform: translateY(-2px);
+    .preview-text{
+      max-width:720px;
+      margin:auto;
+      font-size:20px;
+      line-height:1.9;
+      color:#d9e3ef;
     }
 
-    .footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #aaaaaa;
-      opacity: 0.9;
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+      margin-top:45px;
+      text-align:left;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 42px;
+    .feature-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:24px;
+    }
+
+    .feature-card h3{
+      margin-top:0;
+      margin-bottom:12px;
+      color:#f28c28;
+      font-size:22px;
+    }
+
+    .feature-card p{
+      margin:0;
+      color:#d6dfeb;
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .button{
+      display:inline-block;
+      margin-top:50px;
+      background:#f28c28;
+      color:white;
+      padding:18px 42px;
+      border-radius:14px;
+      text-decoration:none;
+      font-size:20px;
+      font-weight:bold;
+      transition:0.3s ease;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .button:hover{
+      background:#ff9d3d;
+      transform:translateY(-2px);
+    }
+
+    .small-note{
+      margin-top:28px;
+      font-size:15px;
+      color:#b9c5d4;
+      line-height:1.6;
+    }
+
+    footer{
+      margin-top:70px;
+      font-size:14px;
+      color:#b7c2cf;
+      opacity:0.9;
+    }
+
+    @media (max-width:768px){
+
+      h1{
+        font-size:42px;
       }
 
-      p {
-        font-size: 19px;
+      .intro{
+        font-size:19px;
       }
 
-      .brand-badge {
-        font-size: 32px;
-        padding: 16px 28px;
+      .preview-title{
+        font-size:28px;
       }
 
-      .preview-box {
-        padding: 40px 22px;
+      .preview-text{
+        font-size:18px;
       }
 
-      .button {
-        width: 85%;
-        font-size: 18px;
+      .preview-box{
+        padding:40px 22px;
       }
+
+      .button{
+        width:90%;
+        font-size:18px;
+      }
+
     }
+
   </style>
 </head>
 
@@ -122,34 +170,66 @@
 
   <div class="container">
 
+    <img src="BridgeEDU2.png" alt="BridgeEDU Logo" class="premium-logo">
+
     <h1>BridgeEDU Communication Assistant</h1>
 
-    <p>
-      A professional ICT-mediated communication support tool designed for
-      teachers, school leaders, and multilingual educational environments across Asia.
+    <p class="intro">
+      A professional ICT-mediated communication support platform designed for
+      multilingual educational environments, helping teachers and school leaders
+      communicate more clearly, professionally, and effectively across cultures.
     </p>
 
     <div class="preview-box">
 
-      <div class="brand-badge">BridgeEDU</div>
+      <h2 class="preview-title">
+        Limited App Preview
+      </h2>
 
-      <p class="notice">
-        This is a limited preview version of the BridgeEDU app.
-        <br><br>
-        Full premium access includes the complete communication toolkit,
-        advanced searchable templates, editable professional responses,
-        and future offline app support.
+      <p class="preview-text">
+        The full BridgeEDU communication assistant includes advanced searchable templates,
+        editable quick-copy messaging, communication support across multiple professional
+        situations, and future premium offline functionality currently under development.
       </p>
 
-      <a class="button" href="https://payhip.com/b/6Tik2" target="_blank">
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <h3>Professional Messaging</h3>
+          <p>
+            Ready-to-use templates designed specifically for multilingual school communication.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Quick Copy Support</h3>
+          <p>
+            Instantly copy editable communication responses for everyday professional situations.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Situation-Based Guidance</h3>
+          <p>
+            Access communication support organised by context, tone, urgency, and audience.
+          </p>
+        </div>
+
+      </div>
+
+      <a href="https://payhip.com/b/6Tik2" target="_blank" class="button">
         Unlock Full Access
       </a>
 
+      <div class="small-note">
+        Full access and future premium versions will continue expanding as the platform develops.
+      </div>
+
     </div>
 
-    <div class="footer">
-      Powered by BridgeEDU
-    </div>
+    <footer>
+      Developed by Neville O’Callaghan • BridgeEDU
+    </footer>
 
   </div>
 
