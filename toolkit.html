@@ -6,8 +6,13 @@
   <title>Toolkit | BridgeEDU</title>
 
   <style>
+
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -16,6 +21,7 @@
       line-height: 1.6;
       color: #1f2d3d;
       background: #f5f7fb;
+      overflow-x: hidden;
     }
 
     a {
@@ -23,14 +29,21 @@
     }
 
     .site-header {
-      background: #f8fafc;
-      padding: 16px 20px;
-      border-bottom: 4px solid #d99a2b;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 154, 43, 0.25);
+      box-shadow: 0 8px 30px rgba(15, 35, 55, 0.08);
+      transition: all 0.3s ease;
     }
 
     .header-inner {
       max-width: 1180px;
       margin: 0 auto;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -48,6 +61,11 @@
       width: auto;
       display: block;
       flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .site-logo:hover {
+      transform: scale(1.03);
     }
 
     .site-title {
@@ -56,6 +74,7 @@
       line-height: 1;
       color: #12304a;
       font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     .site-tagline {
@@ -65,18 +84,20 @@
     }
 
     .header-badge {
-      background: #12304a;
+      background: linear-gradient(135deg, #12304a 0%, #1a4568 100%);
       color: #ffffff;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 700;
       white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(18, 48, 74, 0.18);
     }
 
     .main-nav {
       background: #12304a;
       padding: 0 20px;
+      box-shadow: 0 6px 20px rgba(16, 38, 59, 0.12);
     }
 
     .nav-links {
@@ -93,31 +114,44 @@
     .nav-links a {
       color: #ffffff;
       font-weight: 700;
-      padding: 10px 15px;
+      padding: 10px 16px;
       border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(217, 154, 43, 0.22);
+      background: rgba(217, 154, 43, 0.24);
       color: #ffd98c;
+      transform: translateY(-1px);
     }
 
     .hero {
+      position: relative;
+      overflow: hidden;
       background:
         radial-gradient(circle at top left, rgba(217, 154, 43, 0.24), transparent 34%),
         linear-gradient(135deg, #10263b 0%, #173d5f 52%, #10263b 100%);
       color: #ffffff;
-      padding: 82px 20px;
+      padding: 96px 20px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+      pointer-events: none;
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
+      gap: 54px;
       align-items: center;
     }
 
@@ -132,14 +166,15 @@
     }
 
     .hero h2 {
-      margin: 0 0 20px;
-      font-size: 3.35rem;
-      line-height: 1.08;
+      margin: 0 0 22px;
+      font-size: 3.45rem;
+      line-height: 1.05;
       font-weight: 800;
+      letter-spacing: -0.04em;
     }
 
     .hero p {
-      margin: 0 0 28px;
+      margin: 0 0 30px;
       max-width: 760px;
       color: #e8eef6;
       font-size: 1.14rem;
@@ -153,19 +188,19 @@
 
     .btn {
       display: inline-block;
-      padding: 13px 24px;
+      padding: 14px 26px;
       border-radius: 999px;
       font-weight: 800;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.16);
     }
 
     .btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
+      transform: translateY(-3px);
     }
 
     .btn-primary {
-      background: #f28c28;
+      background: linear-gradient(135deg, #f28c28 0%, #d99a2b 100%);
       color: #ffffff;
     }
 
@@ -176,23 +211,28 @@
 
     .hero-card {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
       text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-4px);
     }
 
     .hero-card img {
-      width: 210px;
+      width: 220px;
       max-width: 100%;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero-card h3 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       color: #ffd98c;
-      font-size: 1.5rem;
+      font-size: 1.52rem;
     }
 
     .hero-card p {
@@ -204,7 +244,7 @@
     .product-strip {
       background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
-      padding: 22px 20px;
+      padding: 26px 20px;
     }
 
     .product-strip-inner {
@@ -212,34 +252,42 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
     .strip-item {
-      background: #f5f7fb;
-      border-radius: 16px;
-      padding: 18px;
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 20px;
       border-left: 5px solid #d99a2b;
       font-weight: 800;
       color: #12304a;
       text-align: center;
+      box-shadow: 0 12px 28px rgba(16, 38, 59, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .strip-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(16, 38, 59, 0.1);
     }
 
     .content-section {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 76px 20px;
+      padding: 88px 20px;
     }
 
     .section-heading {
       text-align: center;
-      margin-bottom: 42px;
+      margin-bottom: 48px;
     }
 
     .section-heading h3 {
-      margin: 0 0 12px;
-      font-size: 2.2rem;
+      margin: 0 0 14px;
+      font-size: 2.3rem;
       color: #12304a;
+      letter-spacing: -0.03em;
     }
 
     .section-heading p {
@@ -252,15 +300,21 @@
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      gap: 26px;
     }
 
     .card {
       background: #ffffff;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(16, 38, 59, 0.08);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 16px 40px rgba(16, 38, 59, 0.08);
       border-top: 5px solid #d99a2b;
+      transition: all 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(16, 38, 59, 0.12);
     }
 
     .card h4 {
@@ -276,7 +330,7 @@
 
     .split-section {
       background: #ffffff;
-      padding: 76px 20px;
+      padding: 88px 20px;
     }
 
     .split-inner {
@@ -284,29 +338,35 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 38px;
+      gap: 42px;
       align-items: start;
     }
 
     .split-text h3 {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       color: #12304a;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
+      letter-spacing: -0.03em;
     }
 
     .split-text p {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       color: #4c5d70;
-      font-size: 1.03rem;
+      font-size: 1.04rem;
     }
 
     .feature-panel {
-      background: #f5f7fb;
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 6px solid #d99a2b;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(16, 38, 59, 0.06);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 16px 40px rgba(16, 38, 59, 0.06);
+      transition: all 0.28s ease;
+    }
+
+    .feature-panel:hover {
+      transform: translateY(-4px);
     }
 
     .feature-panel h4 {
@@ -322,12 +382,12 @@
     }
 
     .feature-panel li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .quote-section {
-      background: #edf2f7;
-      padding: 76px 20px;
+      background: linear-gradient(180deg, #edf2f7 0%, #f5f7fb 100%);
+      padding: 90px 20px;
     }
 
     .quote-inner {
@@ -338,14 +398,15 @@
 
     .quote-inner blockquote {
       margin: 0;
-      font-size: 1.58rem;
+      font-size: 1.7rem;
       line-height: 1.5;
       color: #12304a;
       font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .quote-inner p {
-      margin: 18px 0 0;
+      margin: 22px 0 0;
       color: #4c5d70;
       font-size: 1rem;
     }
@@ -354,46 +415,52 @@
       background:
         radial-gradient(circle at top right, rgba(217, 154, 43, 0.18), transparent 32%),
         #ffffff;
-      border-radius: 24px;
-      padding: 42px;
-      box-shadow: 0 20px 50px rgba(16, 38, 59, 0.12);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: 0 24px 60px rgba(16, 38, 59, 0.12);
       border: 1px solid #e2e8f0;
       border-top: 6px solid #d99a2b;
-      max-width: 880px;
+      max-width: 920px;
       margin: 0 auto;
       text-align: center;
     }
 
     .price-panel h3 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       color: #12304a;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
     }
 
     .price-panel p {
       color: #4c5d70;
-      margin: 0 auto 22px;
-      max-width: 700px;
+      margin: 0 auto 26px;
+      max-width: 720px;
+      font-size: 1.04rem;
     }
 
     .cta-section {
+      position: relative;
+      overflow: hidden;
       background:
         radial-gradient(circle at top right, rgba(217, 154, 43, 0.22), transparent 32%),
         linear-gradient(135deg, #12304a 0%, #10263b 100%);
       color: #ffffff;
-      padding: 70px 20px;
+      padding: 82px 20px;
       text-align: center;
     }
 
     .cta-section h3 {
-      margin: 0 0 12px;
-      font-size: 2.1rem;
+      margin: 0 0 14px;
+      font-size: 2.2rem;
+      letter-spacing: -0.03em;
     }
 
     .cta-section p {
       max-width: 780px;
-      margin: 0 auto 26px;
+      margin: 0 auto 28px;
       color: #dbe5f0;
+      font-size: 1.04rem;
     }
 
     .cta-section .button-group {
@@ -404,7 +471,7 @@
       background: #0b1f31;
       color: #dbe5f0;
       text-align: center;
-      padding: 26px 20px;
+      padding: 30px 20px;
       font-size: 0.95rem;
     }
 
@@ -413,6 +480,7 @@
     }
 
     @media (max-width: 860px) {
+
       .header-inner {
         flex-direction: column;
         text-align: center;
@@ -436,11 +504,12 @@
       }
 
       .hero h2 {
-        font-size: 2.55rem;
+        font-size: 2.6rem;
       }
     }
 
     @media (max-width: 520px) {
+
       .site-logo {
         height: 76px;
       }
@@ -454,7 +523,7 @@
       }
 
       .hero {
-        padding: 64px 20px;
+        padding: 72px 20px;
       }
 
       .hero h2 {
@@ -468,36 +537,51 @@
       }
 
       .quote-inner blockquote {
-        font-size: 1.25rem;
+        font-size: 1.28rem;
       }
 
       .price-panel {
-        padding: 30px 22px;
+        padding: 34px 24px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <header class="site-header">
+
     <div class="header-inner">
+
       <div class="brand-block">
+
         <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo" class="site-logo">
 
         <div>
-          <h1 class="site-title">BridgeEDU</h1>
-          <p class="site-tagline">Professional communication support for multilingual schools</p>
+
+          <h1 class="site-title">
+            BridgeEDU
+          </h1>
+
+          <p class="site-tagline">
+            Professional communication support for multilingual schools
+          </p>
+
         </div>
+
       </div>
 
       <div class="header-badge">
         Communication Toolkit Access
       </div>
+
     </div>
+
   </header>
 
   <nav class="main-nav">
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -508,29 +592,43 @@
       <a href="toolkit.html" class="active">Toolkit</a>
       <a href="app-preview.html">App Preview</a>
     </div>
+
   </nav>
 
   <section class="hero">
+
     <div class="hero-inner">
 
       <div>
-        <span class="eyebrow">BridgeEDU Toolkit</span>
+
+        <span class="eyebrow">
+          BridgeEDU Toolkit
+        </span>
 
         <h2>
           Professional message support for clearer school communication.
         </h2>
 
         <p>
-          The BridgeEDU Communication Toolkit helps teachers and school leaders move from uncertainty to clearer, more structured, and more professional communication in multilingual educational settings.
+          The BridgeEDU Communication Toolkit helps teachers and school leaders move from uncertainty towards clearer, more structured, and more professional communication within multilingual educational environments.
         </p>
 
         <div class="button-group">
-          <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Unlock Full Access</a>
-          <a href="app-preview.html" class="btn btn-secondary">View App Preview</a>
+
+          <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Unlock Full Access
+          </a>
+
+          <a href="app-preview.html" class="btn btn-secondary">
+            View App Preview
+          </a>
+
         </div>
+
       </div>
 
       <div class="hero-card">
+
         <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo">
 
         <h3>
@@ -540,51 +638,87 @@
         <p>
           A structured professional toolkit for real school messages, communication clarity, and stronger workplace confidence.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
   <section class="product-strip">
+
     <div class="product-strip-inner">
-      <div class="strip-item">Professional templates</div>
-      <div class="strip-item">School-based situations</div>
-      <div class="strip-item">Clearer tone choices</div>
-      <div class="strip-item">Research-informed support</div>
+
+      <div class="strip-item">
+        Professional templates
+      </div>
+
+      <div class="strip-item">
+        School-based situations
+      </div>
+
+      <div class="strip-item">
+        Clearer tone choices
+      </div>
+
+      <div class="strip-item">
+        Research-informed support
+      </div>
+
     </div>
+
   </section>
 
   <section class="content-section">
 
     <div class="section-heading">
-      <h3>What this toolkit is designed to do</h3>
+
+      <h3>
+        What this toolkit is designed to do
+      </h3>
 
       <p>
-        Communication becomes difficult when expectations are unclear, tone is uncertain, or school systems are not fully explained. The toolkit is designed to reduce that uncertainty with practical language, structured examples, and communication support that users can apply directly.
+        Communication becomes difficult when expectations are unclear, tone feels uncertain, or school systems are not fully explained. The toolkit is designed to reduce that uncertainty through practical language, structured examples, and communication support that users can apply directly.
       </p>
+
     </div>
 
     <div class="card-grid">
 
       <div class="card">
-        <h4>Make messages easier to manage</h4>
+
+        <h4>
+          Make messages easier to manage
+        </h4>
+
         <p>
           The toolkit supports clearer wording, stronger structure, and less hesitation when preparing professional communication.
         </p>
+
       </div>
 
       <div class="card">
-        <h4>Support real educational contexts</h4>
+
+        <h4>
+          Support real educational contexts
+        </h4>
+
         <p>
-          The materials are shaped around school-based communication issues, not generic workplace advice.
+          The materials are shaped around school-based communication challenges rather than generic workplace advice.
         </p>
+
       </div>
 
       <div class="card">
-        <h4>Turn insight into action</h4>
+
+        <h4>
+          Turn insight into action
+        </h4>
+
         <p>
           BridgeEDU moves from research-informed understanding towards practical wording and usable communication pathways.
         </p>
+
       </div>
 
     </div>
@@ -596,31 +730,39 @@
     <div class="split-inner">
 
       <div class="split-text">
-        <h3>Who the toolkit is for</h3>
+
+        <h3>
+          Who the toolkit is for
+        </h3>
 
         <p>
-          The BridgeEDU toolkit is especially relevant for foreign teachers, school leaders, coordinators, and educational teams working across language, culture, hierarchy, and professional expectations.
+          The BridgeEDU toolkit is especially relevant for foreign teachers, school leaders, coordinators, and educational teams working across language, culture, hierarchy, and differing professional expectations.
         </p>
 
         <p>
-          It is designed for users who want communication to feel clearer, calmer, more professional, and easier to handle in practice.
+          It is designed for users who want communication to feel clearer, calmer, more professional, and easier to manage in practice.
         </p>
 
         <p>
-          The toolkit does not claim to solve every school problem. It supports one area that strongly influences many others: how people communicate expectations, concerns, requests, reminders, and professional messages.
+          The toolkit does not claim to solve every educational challenge. It supports one area that strongly influences many others: how people communicate expectations, concerns, requests, reminders, and professional messages.
         </p>
+
       </div>
 
       <div class="feature-panel">
-        <h4>This toolkit is useful for users who want:</h4>
+
+        <h4>
+          This toolkit is useful for users who want:
+        </h4>
 
         <ul>
           <li>clearer professional wording</li>
           <li>less uncertainty when writing messages</li>
           <li>more confidence in multilingual workplace interaction</li>
-          <li>communication support that feels practical, not overly academic</li>
-          <li>tools shaped around real educational settings</li>
+          <li>communication support that feels practical rather than overly academic</li>
+          <li>tools shaped around real educational environments</li>
         </ul>
+
       </div>
 
     </div>
@@ -630,6 +772,7 @@
   <section class="quote-section">
 
     <div class="quote-inner">
+
       <blockquote>
         Clearer communication does not remove every challenge, but it can remove a great deal of avoidable confusion.
       </blockquote>
@@ -637,6 +780,7 @@
       <p>
         That is the practical space this toolkit is designed to support.
       </p>
+
     </div>
 
   </section>
@@ -644,34 +788,53 @@
   <section class="content-section">
 
     <div class="section-heading">
-      <h3>Why this toolkit stands apart</h3>
+
+      <h3>
+        Why this toolkit stands apart
+      </h3>
 
       <p>
         BridgeEDU is positioned as more than a collection of messages. It is a research-informed communication support pathway designed around real school interaction.
       </p>
+
     </div>
 
     <div class="card-grid">
 
       <div class="card">
-        <h4>It is grounded</h4>
+
+        <h4>
+          It is grounded
+        </h4>
+
         <p>
           The toolkit grows out of a wider postgraduate research project focused on communication between teachers and school leaders.
         </p>
+
       </div>
 
       <div class="card">
-        <h4>It is audience-aware</h4>
+
+        <h4>
+          It is audience-aware
+        </h4>
+
         <p>
           It recognises that communication challenges vary by role, context, culture, hierarchy, and institutional expectation.
         </p>
+
       </div>
 
       <div class="card">
-        <h4>It is built for use</h4>
+
+        <h4>
+          It is built for use
+        </h4>
+
         <p>
-          The focus is not simply explaining communication problems, but helping users respond to them more clearly and professionally.
+          The focus is not simply explaining communication challenges, but helping users respond to them more clearly and professionally.
         </p>
+
       </div>
 
     </div>
@@ -683,33 +846,43 @@
     <div class="split-inner">
 
       <div class="split-text">
-        <h3>From preview to full access</h3>
+
+        <h3>
+          From preview to full access
+        </h3>
 
         <p>
-          The public website and app preview are designed to show the BridgeEDU direction without giving unrestricted access to the full product.
+          The public website and controlled app preview are designed to demonstrate the BridgeEDU direction without providing unrestricted access to the full communication system.
         </p>
 
         <p>
-          Visitors can explore the platform, understand the communication problem, and view the limited app preview before choosing to unlock fuller access through the toolkit pathway.
+          Visitors can explore the platform, understand the communication challenge, and review the limited app preview before choosing to unlock fuller access through the toolkit pathway.
         </p>
 
         <p>
-          This keeps the public website useful while still protecting the commercial value of the full BridgeEDU communication system.
+          This keeps the public platform useful while protecting the wider value of the full BridgeEDU communication ecosystem.
         </p>
 
-        <a href="app-preview.html" class="btn btn-primary">View App Preview</a>
+        <a href="app-preview.html" class="btn btn-primary">
+          View App Preview
+        </a>
+
       </div>
 
       <div class="feature-panel">
-        <h4>The toolkit pathway supports:</h4>
+
+        <h4>
+          The toolkit pathway supports:
+        </h4>
 
         <ul>
           <li>controlled public preview access</li>
           <li>stronger trust before purchase</li>
-          <li>clear product positioning</li>
-          <li>professional communication value</li>
-          <li>future app-based expansion</li>
+          <li>clear professional positioning</li>
+          <li>practical communication value</li>
+          <li>future platform expansion</li>
         </ul>
+
       </div>
 
     </div>
@@ -719,16 +892,27 @@
   <section class="content-section">
 
     <div class="price-panel">
-      <h3>Ready to unlock the toolkit?</h3>
+
+      <h3>
+        Ready to unlock the toolkit?
+      </h3>
 
       <p>
-        Access the BridgeEDU Communication Toolkit through Payhip and begin using structured professional communication support designed for multilingual school environments.
+        Access the BridgeEDU Communication Toolkit through Payhip and begin utilising structured professional communication support designed for multilingual educational environments.
       </p>
 
       <div class="button-group">
-        <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Unlock Full Access</a>
-        <a href="about.html" class="btn btn-secondary">Learn More About BridgeEDU</a>
+
+        <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Unlock Full Access
+        </a>
+
+        <a href="about.html" class="btn btn-secondary">
+          Learn More About BridgeEDU
+        </a>
+
       </div>
+
     </div>
 
   </section>
@@ -744,16 +928,25 @@
     </p>
 
     <div class="button-group">
-      <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Toolkit</a>
-      <a href="app-preview.html" class="btn btn-secondary">View App Preview</a>
+
+      <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        Get the Toolkit
+      </a>
+
+      <a href="app-preview.html" class="btn btn-secondary">
+        View App Preview
+      </a>
+
     </div>
 
   </section>
 
   <footer>
+
     <p><strong>BridgeEDU</strong></p>
     <p>Developed by Neville O’Callaghan</p>
     <p>&copy; 2026 BridgeEDU. All rights reserved.</p>
+
   </footer>
 
 </body>
