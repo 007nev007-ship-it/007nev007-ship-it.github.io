@@ -6,7 +6,6 @@
   <title>BridgeEDU | Clear Communication Across Cultures, Classrooms, and Leadership</title>
 
   <style>
-
     *{
       box-sizing:border-box;
     }
@@ -24,8 +23,10 @@
     }
 
     .site-header{
-      background:#eef3f8;
-      padding:14px 20px 12px;
+      background:
+        radial-gradient(circle at top center, rgba(242,140,40,0.10), transparent 32%),
+        linear-gradient(180deg,#f5f8fb 0%, #e8eef5 100%);
+      padding:12px 20px 10px;
       border-bottom:4px solid #f28c28;
     }
 
@@ -35,37 +36,39 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:18px;
+      gap:20px;
       text-align:left;
     }
 
     .site-logo{
-      height:110px;
+      height:118px;
       width:auto;
       display:block;
       flex-shrink:0;
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,0.18));
+      filter:
+        drop-shadow(0 12px 20px rgba(0,0,0,0.18))
+        drop-shadow(0 0 16px rgba(242,140,40,0.12));
     }
 
     .site-title{
       margin:0;
-      font-size:3.05rem;
+      font-size:3.15rem;
       line-height:1;
       color:#1f3b5c;
-      font-weight:700;
-      letter-spacing:-1px;
+      font-weight:800;
+      letter-spacing:-1.2px;
     }
 
     .site-tagline{
       margin:8px 0 0;
-      font-size:1.05rem;
+      font-size:1.06rem;
       color:#3f5874;
     }
 
     .main-nav{
       background:#1f3b5c;
       padding:0 20px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.12);
+      box-shadow:0 8px 20px rgba(0,0,0,0.14);
     }
 
     .nav-links{
@@ -75,16 +78,16 @@
       justify-content:center;
       align-items:center;
       flex-wrap:wrap;
-      gap:12px;
-      padding:14px 0;
+      gap:10px;
+      padding:12px 0;
     }
 
     .nav-links a{
       color:#ffffff;
       font-weight:700;
       padding:10px 16px;
-      border-radius:8px;
-      transition:background 0.2s ease;
+      border-radius:10px;
+      transition:0.2s ease;
     }
 
     .nav-links a:hover,
@@ -98,10 +101,10 @@
 
     .hero{
       background:
-        radial-gradient(circle at top center, rgba(242,140,40,0.16), transparent 28%),
-        linear-gradient(135deg, #10263b 0%, #23476d 100%);
+        radial-gradient(circle at top center, rgba(242,140,40,0.18), transparent 27%),
+        linear-gradient(135deg,#10263b 0%, #21466d 100%);
       color:#ffffff;
-      padding:58px 20px 66px;
+      padding:46px 20px 58px;
     }
 
     .hero-inner{
@@ -111,21 +114,21 @@
     }
 
     .hero-logo{
-      width:220px;
-      max-width:78%;
-      margin:0 auto 14px;
+      width:210px;
+      max-width:76%;
+      margin:0 auto 12px;
       display:block;
       filter:
-        drop-shadow(0 18px 30px rgba(0,0,0,0.35))
+        drop-shadow(0 18px 30px rgba(0,0,0,0.36))
         drop-shadow(0 0 16px rgba(242,140,40,0.14));
     }
 
     .hero h2{
       margin:0 0 18px;
       font-size:3.25rem;
-      line-height:1.1;
-      font-weight:700;
-      letter-spacing:-1px;
+      line-height:1.08;
+      font-weight:800;
+      letter-spacing:-1.2px;
     }
 
     .hero p{
@@ -146,10 +149,10 @@
 
     .btn{
       display:inline-block;
-      padding:13px 24px;
-      border-radius:10px;
+      padding:13px 25px;
+      border-radius:12px;
       font-weight:700;
-      transition:transform 0.2s ease, opacity 0.2s ease;
+      transition:0.2s ease;
     }
 
     .btn:hover{
@@ -160,20 +163,20 @@
     .btn-primary{
       background:#f28c28;
       color:#ffffff;
-      box-shadow:0 10px 20px rgba(0,0,0,0.16);
+      box-shadow:0 12px 22px rgba(0,0,0,0.18);
     }
 
     .btn-secondary{
       background:#ffffff;
       color:#1f3b5c;
-      box-shadow:0 10px 20px rgba(0,0,0,0.12);
+      box-shadow:0 12px 22px rgba(0,0,0,0.14);
     }
 
     .btn-app{
       background:#10263b;
       color:#ffffff;
       border:2px solid #f28c28;
-      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      box-shadow:0 10px 24px rgba(0,0,0,0.28);
     }
 
     .btn-app:hover{
@@ -183,78 +186,90 @@
     .content-section{
       max-width:1120px;
       margin:0 auto;
-      padding:72px 20px;
+      padding:68px 20px;
+    }
+
+    .content-section.alt{
+      background:#eef3f8;
+      max-width:none;
+    }
+
+    .content-inner{
+      max-width:1120px;
+      margin:0 auto;
     }
 
     .section-heading{
       text-align:center;
-      margin-bottom:42px;
+      margin-bottom:40px;
     }
 
     .section-heading h3{
       margin:0 0 12px;
-      font-size:2.1rem;
+      font-size:2.15rem;
       color:#1f3b5c;
+      letter-spacing:-0.4px;
     }
 
     .section-heading p{
       max-width:800px;
       margin:0 auto;
       color:#4c5d70;
-      font-size:1.03rem;
+      font-size:1.04rem;
       line-height:1.8;
     }
 
     .card-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
     }
 
     .card{
-      background:#ffffff;
-      border-radius:16px;
-      padding:28px;
-      box-shadow:0 10px 28px rgba(20, 40, 70, 0.08);
-      border-top:4px solid #f28c28;
+      background:linear-gradient(180deg,#ffffff 0%, #f9fbfd 100%);
+      border-radius:18px;
+      padding:30px;
+      box-shadow:0 14px 34px rgba(20,40,70,0.09);
+      border-top:5px solid #f28c28;
       transition:0.25s ease;
     }
 
     .card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 16px 34px rgba(20, 40, 70, 0.12);
+      transform:translateY(-4px);
+      box-shadow:0 18px 40px rgba(20,40,70,0.14);
     }
 
     .card h4{
       margin:0 0 12px;
       color:#1f3b5c;
-      font-size:1.2rem;
+      font-size:1.22rem;
     }
 
     .card p{
       margin:0;
       color:#4c5d70;
-      line-height:1.8;
+      line-height:1.78;
     }
 
     .split-section{
       background:#ffffff;
-      padding:64px 20px;
+      padding:68px 20px;
     }
 
     .split-inner{
       max-width:1120px;
       margin:0 auto;
       display:grid;
-      grid-template-columns:1.2fr 1fr;
-      gap:34px;
-      align-items:start;
+      grid-template-columns:1.15fr 1fr;
+      gap:42px;
+      align-items:center;
     }
 
     .split-text h3{
       margin:0 0 16px;
       color:#1f3b5c;
-      font-size:2rem;
+      font-size:2.05rem;
+      line-height:1.25;
     }
 
     .split-text p{
@@ -264,17 +279,17 @@
     }
 
     .feature-panel{
-      background:#f4f7fb;
+      background:linear-gradient(180deg,#f4f7fb 0%, #eef3f8 100%);
       border-left:5px solid #f28c28;
-      border-radius:14px;
-      padding:26px;
-      box-shadow:0 10px 22px rgba(0,0,0,0.05);
+      border-radius:18px;
+      padding:30px;
+      box-shadow:0 16px 34px rgba(20,40,70,0.08);
     }
 
     .feature-panel h4{
       margin:0 0 14px;
       color:#1f3b5c;
-      font-size:1.15rem;
+      font-size:1.18rem;
     }
 
     .feature-panel ul{
@@ -290,30 +305,31 @@
 
     .cta-section{
       background:
-        radial-gradient(circle at top center, rgba(242,140,40,0.12), transparent 35%),
-        #1f3b5c;
+        radial-gradient(circle at top center, rgba(242,140,40,0.14), transparent 36%),
+        linear-gradient(135deg,#1f3b5c 0%, #10263b 100%);
       color:#ffffff;
-      padding:68px 20px;
+      padding:72px 20px;
       text-align:center;
     }
 
     .cta-section h3{
       margin:0 0 12px;
-      font-size:2rem;
+      font-size:2.1rem;
+      letter-spacing:-0.4px;
     }
 
     .cta-section p{
       max-width:760px;
-      margin:0 auto 24px;
+      margin:0 auto 26px;
       color:#dbe5f0;
       line-height:1.8;
     }
 
     footer{
-      background:#10263b;
+      background:#081c2d;
       color:#dbe5f0;
       text-align:center;
-      padding:24px 20px;
+      padding:28px 20px;
       font-size:0.95rem;
     }
 
@@ -338,7 +354,7 @@
       }
 
       .hero{
-        padding:46px 20px 58px;
+        padding:42px 20px 54px;
       }
 
       .hero h2{
@@ -362,7 +378,7 @@
       }
 
       .hero-logo{
-        width:180px;
+        width:170px;
       }
 
       .site-title{
@@ -374,7 +390,7 @@
       }
 
       .hero{
-        padding:40px 20px 52px;
+        padding:36px 20px 50px;
       }
 
       .hero h2{
@@ -383,6 +399,15 @@
 
       .hero p{
         font-size:1rem;
+      }
+
+      .content-section,
+      .split-section{
+        padding:54px 20px;
+      }
+
+      .cta-section{
+        padding:58px 20px;
       }
 
     }
@@ -461,39 +486,43 @@
 
   </section>
 
-  <section class="content-section">
+  <section class="content-section alt">
 
-    <div class="section-heading">
+    <div class="content-inner">
 
-      <h3>Why BridgeEDU matters</h3>
+      <div class="section-heading">
 
-      <p>
-        In multilingual schools, misunderstandings can affect staff relationships, decision-making, expectations, and the wider educational environment. BridgeEDU was created to help make communication clearer, more practical, and more effective across those spaces.
-      </p>
+        <h3>Why BridgeEDU matters</h3>
 
-    </div>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h4>For teachers</h4>
         <p>
-          Find support for communicating more clearly and professionally with school leaders, particularly in contexts shaped by language differences, cultural adjustment, and institutional expectations.
+          In multilingual schools, misunderstandings can affect staff relationships, decision-making, expectations, and the wider educational environment. BridgeEDU was created to help make communication clearer, more practical, and more effective across those spaces.
         </p>
+
       </div>
 
-      <div class="card">
-        <h4>For school leaders</h4>
-        <p>
-          Strengthen communication with international staff, reduce avoidable misunderstandings, and create more consistent systems for professional clarity and mutual understanding.
-        </p>
-      </div>
+      <div class="card-grid">
 
-      <div class="card">
-        <h4>For diverse school settings</h4>
-        <p>
-          Build communication practices that are realistic, respectful, and workable across multilingual and intercultural educational environments.
-        </p>
+        <div class="card">
+          <h4>For teachers</h4>
+          <p>
+            Find support for communicating more clearly and professionally with school leaders, particularly in contexts shaped by language differences, cultural adjustment, and institutional expectations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>For school leaders</h4>
+          <p>
+            Strengthen communication with international staff, reduce avoidable misunderstandings, and create more consistent systems for professional clarity and mutual understanding.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>For diverse school settings</h4>
+          <p>
+            Build communication practices that are realistic, respectful, and workable across multilingual and intercultural educational environments.
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -539,39 +568,43 @@
 
   </section>
 
-  <section class="content-section">
+  <section class="content-section alt">
 
-    <div class="section-heading">
+    <div class="content-inner">
 
-      <h3>Start with the next step that fits your needs</h3>
+      <div class="section-heading">
 
-      <p>
-        Whether you want to understand the communication problem, explore the research behind the project, or access practical tools straight away, BridgeEDU is designed to help you move directly to the part that is most useful.
-      </p>
+        <h3>Start with the next step that fits your needs</h3>
 
-    </div>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h4>Understand the context</h4>
         <p>
-          Visit the About and Research pages for a clearer picture of the communication issues that shape multilingual educational settings.
+          Whether you want to understand the communication problem, explore the research behind the project, or access practical tools straight away, BridgeEDU is designed to help you move directly to the part that is most useful.
         </p>
+
       </div>
 
-      <div class="card">
-        <h4>Find targeted guidance</h4>
-        <p>
-          Visit the Teachers and School Leaders pages for support framed around the needs, pressures, and responsibilities of each audience.
-        </p>
-      </div>
+      <div class="card-grid">
 
-      <div class="card">
-        <h4>Access practical support</h4>
-        <p>
-          Visit the Resources and Toolkit pages for usable materials, structured guidance, and communication support you can apply more directly.
-        </p>
+        <div class="card">
+          <h4>Understand the context</h4>
+          <p>
+            Visit the About and Research pages for a clearer picture of the communication issues that shape multilingual educational settings.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Find targeted guidance</h4>
+          <p>
+            Visit the Teachers and School Leaders pages for support framed around the needs, pressures, and responsibilities of each audience.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Access practical support</h4>
+          <p>
+            Visit the Resources and Toolkit pages for usable materials, structured guidance, and communication support you can apply more directly.
+          </p>
+        </div>
+
       </div>
 
     </div>
