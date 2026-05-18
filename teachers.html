@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Teachers | BridgeEDU</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,7 +15,7 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #1f2d3d;
-      background: #f4f7fb;
+      background: #f5f7fb;
     }
 
     a {
@@ -22,110 +23,130 @@
     }
 
     .site-header {
-      background: #eef3f8;
-      padding: 16px 20px 14px;
-      border-bottom: 4px solid #f28c28;
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-bottom: 4px solid #d99a2b;
     }
 
     .header-inner {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 22px;
-      text-align: left;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .site-logo {
-      height: 74px;
+      height: 82px;
       width: auto;
       display: block;
       flex-shrink: 0;
     }
 
-    .site-branding {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
     .site-title {
       margin: 0;
-      font-size: 2.6rem;
-      line-height: 1.05;
-      color: #1f3b5c;
-      font-weight: 700;
+      font-size: 2.3rem;
+      line-height: 1;
+      color: #12304a;
+      font-weight: 800;
     }
 
     .site-tagline {
       margin: 8px 0 0;
       font-size: 1rem;
-      color: #3f5874;
+      color: #425b76;
+    }
+
+    .header-badge {
+      background: #12304a;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .main-nav {
-      background: #1f3b5c;
+      background: #12304a;
       padding: 0 20px;
     }
 
     .nav-links {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       padding: 14px 0;
     }
 
     .nav-links a {
       color: #ffffff;
       font-weight: 700;
-      padding: 10px 16px;
-      border-radius: 8px;
-      transition: background 0.2s ease;
+      padding: 10px 15px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    .nav-links a.active {
-      box-shadow: inset 0 -3px 0 #f28c28;
+      background: rgba(217, 154, 43, 0.22);
+      color: #ffd98c;
     }
 
     .hero {
-      background: linear-gradient(135deg, #4a6a8f 0%, #5c7da3 100%);
+      background:
+        radial-gradient(circle at top left, rgba(217, 154, 43, 0.22), transparent 34%),
+        linear-gradient(135deg, #10263b 0%, #173d5f 52%, #10263b 100%);
       color: #ffffff;
-      padding: 76px 20px;
+      padding: 82px 20px;
     }
 
     .hero-inner {
-      max-width: 980px;
+      max-width: 1180px;
       margin: 0 auto;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #ffd98c;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
     }
 
     .hero h2 {
-      margin: 0 0 18px;
-      font-size: 3rem;
-      line-height: 1.15;
-      font-weight: 700;
+      margin: 0 0 20px;
+      font-size: 3.3rem;
+      line-height: 1.08;
+      font-weight: 800;
     }
 
     .hero p {
-      max-width: 820px;
-      margin: 0 auto 30px;
-      font-size: 1.15rem;
-      color: #e9f0f7;
+      margin: 0 0 28px;
+      max-width: 760px;
+      color: #e8eef6;
+      font-size: 1.14rem;
     }
 
     .button-group {
       display: flex;
-      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -133,8 +154,8 @@
     .btn {
       display: inline-block;
       padding: 13px 24px;
-      border-radius: 8px;
-      font-weight: 700;
+      border-radius: 999px;
+      font-weight: 800;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
@@ -150,13 +171,40 @@
 
     .btn-secondary {
       background: #ffffff;
-      color: #1f3b5c;
+      color: #12304a;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .hero-card img {
+      width: 210px;
+      max-width: 100%;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 12px;
+      color: #ffd98c;
+      font-size: 1.5rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 1rem;
+      color: #e8eef6;
     }
 
     .content-section {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 72px 20px;
+      padding: 76px 20px;
     }
 
     .section-heading {
@@ -166,15 +214,15 @@
 
     .section-heading h3 {
       margin: 0 0 12px;
-      font-size: 2.1rem;
-      color: #1f3b5c;
+      font-size: 2.2rem;
+      color: #12304a;
     }
 
     .section-heading p {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
       color: #4c5d70;
-      font-size: 1.03rem;
+      font-size: 1.04rem;
     }
 
     .card-grid {
@@ -185,16 +233,16 @@
 
     .card {
       background: #ffffff;
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(20, 40, 70, 0.08);
-      border-top: 4px solid #f28c28;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(16, 38, 59, 0.08);
+      border-top: 5px solid #d99a2b;
     }
 
     .card h4 {
       margin: 0 0 12px;
-      color: #1f3b5c;
-      font-size: 1.2rem;
+      color: #12304a;
+      font-size: 1.22rem;
     }
 
     .card p {
@@ -204,41 +252,43 @@
 
     .split-section {
       background: #ffffff;
-      padding: 72px 20px;
+      padding: 76px 20px;
     }
 
     .split-inner {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 36px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 38px;
       align-items: start;
     }
 
     .split-text h3 {
       margin: 0 0 16px;
-      color: #1f3b5c;
-      font-size: 2rem;
+      color: #12304a;
+      font-size: 2.1rem;
     }
 
     .split-text p {
       margin: 0 0 16px;
       color: #4c5d70;
-      font-size: 1.02rem;
+      font-size: 1.03rem;
     }
 
     .feature-panel {
-      background: #f4f7fb;
-      border-left: 5px solid #f28c28;
-      border-radius: 12px;
-      padding: 26px;
+      background: #f5f7fb;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #d99a2b;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(16, 38, 59, 0.06);
     }
 
     .feature-panel h4 {
       margin: 0 0 14px;
-      color: #1f3b5c;
-      font-size: 1.15rem;
+      color: #12304a;
+      font-size: 1.18rem;
     }
 
     .feature-panel ul {
@@ -252,22 +302,22 @@
     }
 
     .quote-section {
-      background: #eef3f8;
-      padding: 72px 20px;
+      background: #edf2f7;
+      padding: 76px 20px;
     }
 
     .quote-inner {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
       text-align: center;
     }
 
     .quote-inner blockquote {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.58rem;
       line-height: 1.5;
-      color: #1f3b5c;
-      font-weight: 700;
+      color: #12304a;
+      font-weight: 800;
     }
 
     .quote-inner p {
@@ -277,28 +327,34 @@
     }
 
     .cta-section {
-      background: #1f3b5c;
+      background:
+        radial-gradient(circle at top right, rgba(217, 154, 43, 0.22), transparent 32%),
+        linear-gradient(135deg, #12304a 0%, #10263b 100%);
       color: #ffffff;
-      padding: 64px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
     .cta-section h3 {
       margin: 0 0 12px;
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
 
     .cta-section p {
-      max-width: 760px;
-      margin: 0 auto 24px;
+      max-width: 780px;
+      margin: 0 auto 26px;
       color: #dbe5f0;
     }
 
+    .cta-section .button-group {
+      justify-content: center;
+    }
+
     footer {
-      background: #10263b;
+      background: #0b1f31;
       color: #dbe5f0;
       text-align: center;
-      padding: 24px 20px;
+      padding: 26px 20px;
       font-size: 0.95rem;
     }
 
@@ -306,28 +362,37 @@
       margin: 6px 0;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .header-inner {
         flex-direction: column;
         text-align: center;
       }
 
-      .site-title {
-        font-size: 2.3rem;
+      .brand-block {
+        flex-direction: column;
+      }
+
+      .hero-inner,
+      .split-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .button-group {
+        justify-content: center;
       }
 
       .hero h2 {
-        font-size: 2.3rem;
-      }
-
-      .split-inner {
-        grid-template-columns: 1fr;
+        font-size: 2.55rem;
       }
     }
 
     @media (max-width: 520px) {
       .site-logo {
-        height: 72px;
+        height: 76px;
       }
 
       .site-title {
@@ -339,11 +404,11 @@
       }
 
       .hero {
-        padding: 62px 20px;
+        padding: 64px 20px;
       }
 
       .hero h2 {
-        font-size: 2rem;
+        font-size: 2.12rem;
       }
 
       .hero p,
@@ -363,10 +428,17 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <img src="BridgeEDU2.png" alt="BridgeEDU logo" class="site-logo">
-      <div class="site-branding">
-        <h1 class="site-title">BridgeEDU</h1>
-        <p class="site-tagline">Clear communication across cultures, classrooms, and leadership</p>
+      <div class="brand-block">
+        <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo" class="site-logo">
+
+        <div>
+          <h1 class="site-title">BridgeEDU</h1>
+          <p class="site-tagline">Professional communication support for multilingual schools</p>
+        </div>
+      </div>
+
+      <div class="header-badge">
+        Teacher Communication Support
       </div>
     </div>
   </header>
@@ -380,159 +452,247 @@
       <a href="research.html">Research</a>
       <a href="resources.html">Resources</a>
       <a href="toolkit.html">Toolkit</a>
+      <a href="app-preview.html">App Preview</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="hero-inner">
-      <h2>For Teachers</h2>
-      <p>
-        Teaching in a multilingual school environment often means managing more than lessons alone. It can also mean navigating unclear expectations, communication gaps, cultural differences, and professional relationships that are not always easy to read from the outside.
-      </p>
-      <div class="button-group">
-        <a href="resources.html" class="btn btn-primary">View Resources</a>
-        <a href="toolkit.html" class="btn btn-secondary">Explore the Toolkit</a>
+
+      <div>
+        <span class="eyebrow">For Teachers</span>
+
+        <h2>
+          Clearer professional communication for multilingual school environments.
+        </h2>
+
+        <p>
+          Teaching abroad or within multilingual school systems often involves far more than delivering lessons. Teachers may also need to navigate unclear expectations, cultural differences, indirect communication, and professional uncertainty.
+        </p>
+
+        <div class="button-group">
+          <a href="resources.html" class="btn btn-primary">View Resources</a>
+          <a href="app-preview.html" class="btn btn-secondary">View App Preview</a>
+        </div>
       </div>
+
+      <div class="hero-card">
+        <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo">
+
+        <h3>
+          Communication support designed for real school situations.
+        </h3>
+
+        <p>
+          Practical guidance, professional wording, and communication clarity built specifically for educational environments.
+        </p>
+      </div>
+
     </div>
   </section>
 
   <section class="content-section">
+
     <div class="section-heading">
-      <h3>Why this page matters</h3>
+      <h3>Why this page exists</h3>
+
       <p>
-        Many teachers work hard to be professional, cooperative, and adaptable, yet still find themselves unsure about how to communicate clearly in situations shaped by hierarchy, language difference, cultural expectation, or inconsistent school systems. This page is designed to speak directly to that reality.
+        Many teachers are trying to communicate professionally in systems that are not always fully transparent, fully aligned, or fully adapted for multilingual staff. BridgeEDU was created to recognise that reality and support clearer communication pathways.
       </p>
     </div>
 
     <div class="card-grid">
+
       <div class="card">
-        <h4>Communication can feel unclear</h4>
+        <h4>Communication may feel unclear</h4>
+
         <p>
-          Messages may be brief, indirect, delayed, or shaped by assumptions that are never fully explained. This can make everyday working life more stressful than it needs to be.
+          Instructions, updates, expectations, and workplace messages may not always feel direct, consistent, or easy to interpret.
         </p>
       </div>
 
       <div class="card">
-        <h4>Professional expectations may differ</h4>
+        <h4>Professional expectations can differ</h4>
+
         <p>
-          What feels clear, polite, or appropriate in one context may not be interpreted the same way in another. Teachers often have to learn these differences while already managing their work.
+          What sounds clear or respectful in one culture may be interpreted differently in another professional environment.
         </p>
       </div>
 
       <div class="card">
-        <h4>Support is not always structured</h4>
+        <h4>Teachers often adapt quietly</h4>
+
         <p>
-          Even when schools mean well, communication systems are not always designed with multilingual staff in mind. That can leave teachers relying on guesswork more than clarity.
+          Many teachers spend significant energy trying to understand systems, tone, hierarchy, and workplace expectations while still doing their job professionally.
         </p>
       </div>
+
     </div>
+
   </section>
 
   <section class="split-section">
+
     <div class="split-inner">
+
       <div class="split-text">
-        <h3>What BridgeEDU aims to offer teachers</h3>
+
+        <h3>
+          What BridgeEDU aims to offer teachers
+        </h3>
+
         <p>
-          BridgeEDU is intended to help teachers approach school communication with more confidence, more awareness, and more practical support. The aim is not to make communication sound perfect. It is to make it clearer, steadier, and easier to handle in real school situations.
+          BridgeEDU is designed to support clearer, calmer, and more professional communication across multilingual educational settings.
         </p>
+
         <p>
-          That includes recognising that teachers are often balancing professional responsibility with language adaptation, cultural adjustment, and workplace uncertainty at the same time. Strong communication support should acknowledge that, rather than pretending every setting works the same way.
+          The goal is not perfection. The goal is to reduce uncertainty, improve clarity, and help teachers feel more confident when communicating with school leaders, colleagues, coordinators, and wider educational teams.
         </p>
+
         <p>
-          The broader purpose of this page is to show teachers that their communication challenges are not imaginary, not trivial, and not simply a matter of personal weakness. In many cases, they are structural, contextual, and shared by others working in similar environments.
+          This platform recognises that communication difficulties are often contextual rather than personal. In many schools, teachers are adapting to unfamiliar systems while simultaneously trying to maintain professionalism and positive relationships.
         </p>
+
       </div>
 
       <div class="feature-panel">
-        <h4>Teachers may be looking for</h4>
+
+        <h4>Teachers may be looking for:</h4>
+
         <ul>
-          <li>clearer ways to communicate with school leaders</li>
-          <li>more confidence in professional written messages</li>
-          <li>better ways to respond when instructions feel unclear</li>
-          <li>practical support for navigating intercultural workplace communication</li>
-          <li>language that sounds respectful, clear, and professional</li>
+          <li>clearer professional wording</li>
+          <li>more confidence in written communication</li>
+          <li>better ways to request clarification professionally</li>
+          <li>communication that feels respectful but direct</li>
+          <li>support for navigating intercultural workplace expectations</li>
         </ul>
+
       </div>
+
     </div>
+
   </section>
 
   <section class="quote-section">
+
     <div class="quote-inner">
+
       <blockquote>
-        Teachers should not have to rely on guesswork when clear communication is essential to doing their job well.
+        Teachers should not have to rely on guesswork when communication is essential to doing their job effectively.
       </blockquote>
+
       <p>
-        BridgeEDU is designed to support more clarity, not more confusion.
+        BridgeEDU aims to support more clarity, not more confusion.
       </p>
+
     </div>
+
   </section>
 
   <section class="content-section">
+
     <div class="section-heading">
+
       <h3>What stronger communication can support</h3>
+
       <p>
-        Clearer communication does more than reduce misunderstandings. It can also strengthen confidence, save time, improve relationships, and make professional expectations easier to understand and meet.
+        Clearer communication can improve confidence, reduce stress, support professionalism, and make workplace expectations easier to understand and manage.
       </p>
+
     </div>
 
     <div class="card-grid">
+
       <div class="card">
         <h4>More confidence</h4>
+
         <p>
-          When teachers know how to phrase things more clearly and professionally, communication becomes less stressful and less dependent on second-guessing.
+          Clearer wording and stronger communication structure can reduce hesitation and uncertainty.
         </p>
       </div>
 
       <div class="card">
         <h4>Better understanding</h4>
+
         <p>
-          Clearer communication helps teachers interpret expectations more accurately and ask for clarification without sounding confrontational or uncertain.
+          Teachers are better able to interpret expectations and respond professionally when communication becomes clearer.
         </p>
       </div>
 
       <div class="card">
         <h4>Stronger working relationships</h4>
+
         <p>
-          Professional communication that feels respectful and clear can support better day-to-day interaction between teachers, leaders, and wider staff teams.
+          Professional communication that feels respectful and understandable can improve day-to-day collaboration across school teams.
         </p>
       </div>
+
     </div>
+
   </section>
 
   <section class="split-section">
+
     <div class="split-inner">
+
       <div class="split-text">
-        <h3>From insight to practical use</h3>
+
+        <h3>
+          Practical support beyond theory
+        </h3>
+
         <p>
-          BridgeEDU is not limited to discussing the communication problem. It is also being developed as a practical platform with resources and products that teachers can use more directly.
+          BridgeEDU is not intended to remain as a simple informational website. It is being developed into a broader communication support ecosystem that includes resources, structured guidance, app-based support, and practical communication tools.
         </p>
+
         <p>
-          That includes guidance, structured support, and ready-to-use materials designed to help teachers communicate more effectively across multilingual and intercultural educational contexts.
+          The focus is on usability: communication support that feels realistic, professional, and genuinely useful in educational settings.
         </p>
-        <a href="toolkit.html" class="btn btn-primary">View the Toolkit</a>
+
+        <a href="toolkit.html" class="btn btn-primary">
+          Explore the Toolkit
+        </a>
+
       </div>
 
       <div class="feature-panel">
-        <h4>What comes next</h4>
+
+        <h4>BridgeEDU development pathway</h4>
+
         <ul>
-          <li>practical communication resources shaped for real school situations</li>
-          <li>teacher-facing support that feels useful rather than overly theoretical</li>
-          <li>structured tools that reduce uncertainty in written communication</li>
-          <li>future products designed to make professional interaction easier to manage</li>
+          <li>teacher-focused communication support</li>
+          <li>research-informed practical guidance</li>
+          <li>limited public app preview</li>
+          <li>professional communication toolkit access</li>
+          <li>future communication product expansion</li>
         </ul>
+
       </div>
+
     </div>
+
   </section>
 
   <section class="cta-section">
-    <h3>Ready for something more practical?</h3>
+
+    <h3>
+      Ready for something more practical?
+    </h3>
+
     <p>
-      Explore the toolkit and teacher-relevant resources designed to turn communication challenges into clearer, more usable professional support.
+      Explore the communication toolkit and app preview designed to support clearer professional interaction in multilingual educational settings.
     </p>
+
     <div class="button-group">
-      <a href="toolkit.html" class="btn btn-primary">Go to the Toolkit</a>
-      <a href="resources.html" class="btn btn-secondary">Browse Resources</a>
+      <a href="app-preview.html" class="btn btn-primary">
+        View App Preview
+      </a>
+
+      <a href="https://payhip.com/b/6Tik2" class="btn btn-secondary">
+        Unlock Full Access
+      </a>
     </div>
+
   </section>
 
   <footer>
