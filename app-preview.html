@@ -1,325 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BridgeEDU App Preview</title>
+  <title>App Preview | BridgeEDU</title>
 
   <style>
-
-    *{
-      box-sizing:border-box;
+    * {
+      box-sizing: border-box;
     }
 
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2d3d;
+      background: #f5f7fb;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .site-header {
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-bottom: 4px solid #d99a2b;
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .site-logo {
+      height: 82px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 2.3rem;
+      line-height: 1;
+      color: #12304a;
+      font-weight: 800;
+    }
+
+    .site-tagline {
+      margin: 8px 0 0;
+      font-size: 1rem;
+      color: #425b76;
+    }
+
+    .header-badge {
+      background: #12304a;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      background: #12304a;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      font-weight: 700;
+      padding: 10px 15px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(217, 154, 43, 0.22);
+      color: #ffd98c;
+    }
+
+    .hero {
       background:
-        radial-gradient(circle at top center, rgba(242,140,40,0.14), transparent 28%),
-        linear-gradient(180deg,#071827 0%, #10243f 48%, #18365e 100%);
-      color:white;
-      text-align:center;
-      overflow-x:hidden;
+        radial-gradient(circle at top left, rgba(217, 154, 43, 0.24), transparent 34%),
+        linear-gradient(135deg, #10263b 0%, #173d5f 52%, #10263b 100%);
+      color: #ffffff;
+      padding: 82px 20px;
     }
 
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:36px 22px 60px;
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
     }
 
-    .hero{
-      max-width:900px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #ffd98c;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
     }
 
-    .premium-logo{
-      width:285px;
-      max-width:82%;
-      height:auto;
-      display:block;
-      margin:0 auto 12px;
-      filter:
-        drop-shadow(0 18px 34px rgba(0,0,0,0.42))
-        drop-shadow(0 0 18px rgba(242,140,40,0.18));
+    .hero h2 {
+      margin: 0 0 20px;
+      font-size: 3.35rem;
+      line-height: 1.08;
+      font-weight: 800;
     }
 
-    .top-badge{
-      display:inline-block;
-      padding:10px 22px;
-      border-radius:999px;
-      background:rgba(242,140,40,0.12);
-      border:1px solid rgba(242,140,40,0.35);
-      color:#ffbe78;
-      font-size:14px;
-      letter-spacing:1.2px;
-      margin:0 auto 22px;
-      text-transform:uppercase;
-      font-weight:bold;
+    .hero p {
+      margin: 0 0 28px;
+      max-width: 760px;
+      color: #e8eef6;
+      font-size: 1.14rem;
     }
 
-    h1{
-      font-size:58px;
-      line-height:1.05;
-      margin:0 0 18px;
-      color:#ffffff;
-      letter-spacing:-1px;
+    .button-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .intro{
-      max-width:790px;
-      margin:0 auto;
-      font-size:21px;
-      line-height:1.7;
-      color:#dce5f0;
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .preview-box{
-      max-width:1000px;
-      margin:38px auto 0;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.14);
-      border-radius:30px;
-      padding:46px 36px 42px;
-      backdrop-filter:blur(14px);
-      box-shadow:0 24px 60px rgba(0,0,0,0.34);
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
     }
 
-    .preview-title{
-      font-size:36px;
-      margin:0 0 16px;
-      color:#ffbe4d;
+    .btn-primary {
+      background: #f28c28;
+      color: #ffffff;
     }
 
-    .preview-text{
-      max-width:760px;
-      margin:0 auto;
-      font-size:19px;
-      line-height:1.7;
-      color:#d9e3ef;
+    .btn-secondary {
+      background: #ffffff;
+      color: #12304a;
     }
 
-    .feature-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:38px;
-      text-align:left;
+    .software-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
     }
 
-    .feature-card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:20px;
-      padding:26px;
-      transition:0.3s ease;
+    .app-window {
+      background: #f8fafc;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
+      color: #12304a;
     }
 
-    .feature-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(242,140,40,0.35);
-      box-shadow:0 18px 35px rgba(0,0,0,0.22);
+    .app-bar {
+      background: #12304a;
+      color: #ffffff;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .feature-card h3{
-      margin:0 0 12px;
-      color:#f28c28;
-      font-size:22px;
+    .app-bar span {
+      font-weight: 800;
+      font-size: 0.95rem;
     }
 
-    .feature-card p{
-      margin:0;
-      color:#d6dfeb;
-      line-height:1.68;
-      font-size:16px;
+    .status-pill {
+      background: rgba(217, 154, 43, 0.24);
+      color: #ffd98c;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
     }
 
-    .button{
-      display:inline-block;
-      margin-top:38px;
-      background:linear-gradient(135deg,#f28c28,#ffad4d);
-      color:#081726;
-      padding:18px 48px;
-      border-radius:16px;
-      text-decoration:none;
-      font-size:20px;
-      font-weight:bold;
-      transition:0.3s ease;
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.25),
-        0 0 20px rgba(242,140,40,0.18);
+    .app-body {
+      padding: 22px;
+      text-align: left;
     }
 
-    .button:hover{
-      transform:translateY(-3px);
-      box-shadow:
-        0 18px 38px rgba(0,0,0,0.32),
-        0 0 28px rgba(242,140,40,0.28);
+    .app-logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 18px;
     }
 
-    .small-note{
-      max-width:760px;
-      margin:24px auto 0;
-      font-size:15px;
-      color:#b9c5d4;
-      line-height:1.65;
+    .mock-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #d99a2b;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 24px rgba(16, 38, 59, 0.08);
     }
 
-    footer{
-      margin-top:50px;
-      font-size:14px;
-      color:#b7c2cf;
-      opacity:0.9;
-      letter-spacing:0.3px;
+    .mock-card h3 {
+      margin: 0 0 8px;
+      color: #12304a;
+      font-size: 1.05rem;
     }
 
-    @media (max-width:900px){
+    .mock-card p {
+      margin: 0;
+      color: #4c5d70;
+      font-size: 0.95rem;
+    }
 
-      .feature-grid{
-        grid-template-columns:1fr;
+    .locked-strip {
+      background: #edf2f7;
+      color: #425b76;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    .product-strip {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 22px 20px;
+    }
+
+    .product-strip-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .strip-item {
+      background: #f5f7fb;
+      border-radius: 16px;
+      padding: 18px;
+      border-left: 5px solid #d99a2b;
+      font-weight: 800;
+      color: #12304a;
+      text-align: center;
+    }
+
+    .content-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 76px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h3 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      color: #12304a;
+    }
+
+    .section-heading p {
+      max-width: 860px;
+      margin: 0 auto;
+      color: #4c5d70;
+      font-size: 1.04rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(16, 38, 59, 0.08);
+      border-top: 5px solid #d99a2b;
+    }
+
+    .card h4 {
+      margin: 0 0 12px;
+      color: #12304a;
+      font-size: 1.22rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #4c5d70;
+    }
+
+    .split-section {
+      background: #ffffff;
+      padding: 76px 20px;
+    }
+
+    .split-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .split-text h3 {
+      margin: 0 0 16px;
+      color: #12304a;
+      font-size: 2.1rem;
+    }
+
+    .split-text p {
+      margin: 0 0 16px;
+      color: #4c5d70;
+      font-size: 1.03rem;
+    }
+
+    .feature-panel {
+      background: #f5f7fb;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #d99a2b;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(16, 38, 59, 0.06);
+    }
+
+    .feature-panel h4 {
+      margin: 0 0 14px;
+      color: #12304a;
+      font-size: 1.18rem;
+    }
+
+    .feature-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #4c5d70;
+    }
+
+    .feature-panel li {
+      margin-bottom: 10px;
+    }
+
+    .quote-section {
+      background: #edf2f7;
+      padding: 76px 20px;
+    }
+
+    .quote-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-inner blockquote {
+      margin: 0;
+      font-size: 1.58rem;
+      line-height: 1.5;
+      color: #12304a;
+      font-weight: 800;
+    }
+
+    .quote-inner p {
+      margin: 18px 0 0;
+      color: #4c5d70;
+      font-size: 1rem;
+    }
+
+    .preview-panel {
+      background:
+        radial-gradient(circle at top right, rgba(217, 154, 43, 0.18), transparent 32%),
+        #ffffff;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 20px 50px rgba(16, 38, 59, 0.12);
+      border: 1px solid #e2e8f0;
+      border-top: 6px solid #d99a2b;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .preview-panel h3 {
+      margin: 0 0 14px;
+      color: #12304a;
+      font-size: 2.2rem;
+    }
+
+    .preview-panel p {
+      color: #4c5d70;
+      margin: 0 auto 22px;
+      max-width: 720px;
+    }
+
+    .cta-section {
+      background:
+        radial-gradient(circle at top right, rgba(217, 154, 43, 0.22), transparent 32%),
+        linear-gradient(135deg, #12304a 0%, #10263b 100%);
+      color: #ffffff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      margin: 0 0 12px;
+      font-size: 2.1rem;
+    }
+
+    .cta-section p {
+      max-width: 780px;
+      margin: 0 auto 26px;
+      color: #dbe5f0;
+    }
+
+    .cta-section .button-group {
+      justify-content: center;
+    }
+
+    footer {
+      background: #0b1f31;
+      color: #dbe5f0;
+      text-align: center;
+      padding: 26px 20px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 860px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
       }
 
-      h1{
-        font-size:46px;
+      .brand-block {
+        flex-direction: column;
       }
 
+      .hero-inner,
+      .split-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .button-group {
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 2.55rem;
+      }
     }
 
-    @media (max-width:768px){
-
-      .container{
-        padding:30px 18px 50px;
+    @media (max-width: 520px) {
+      .site-logo {
+        height: 76px;
       }
 
-      .premium-logo{
-        width:220px;
-        max-width:86%;
-        margin-bottom:10px;
+      .site-title {
+        font-size: 2rem;
       }
 
-      .top-badge{
-        font-size:12px;
-        line-height:1.4;
-        padding:9px 16px;
-        margin-bottom:18px;
+      .site-tagline {
+        font-size: 0.92rem;
       }
 
-      h1{
-        font-size:38px;
+      .hero {
+        padding: 64px 20px;
       }
 
-      .intro{
-        font-size:18px;
-        line-height:1.68;
+      .hero h2 {
+        font-size: 2.12rem;
       }
 
-      .preview-box{
-        margin-top:30px;
-        padding:36px 22px;
+      .hero p,
+      .split-text p,
+      .section-heading p {
+        font-size: 1rem;
       }
 
-      .preview-title{
-        font-size:30px;
+      .quote-inner blockquote {
+        font-size: 1.25rem;
       }
 
-      .preview-text{
-        font-size:17px;
+      .preview-panel {
+        padding: 30px 22px;
       }
-
-      .button{
-        width:100%;
-        font-size:18px;
-        padding:17px 24px;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo" class="site-logo">
 
-    <section class="hero">
-
-      <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU Logo" class="premium-logo">
-
-      <div class="top-badge">
-        Professional Communication Support Platform
+        <div>
+          <h1 class="site-title">BridgeEDU</h1>
+          <p class="site-tagline">Professional communication support for multilingual schools</p>
+        </div>
       </div>
 
-      <h1>
-        BridgeEDU Communication Assistant
-      </h1>
-
-      <p class="intro">
-        A premium ICT-mediated communication platform designed to support clearer,
-        more professional communication across multilingual educational environments.
-        BridgeEDU helps foreign teachers and school leaders reduce misunderstandings,
-        improve communication confidence, and respond more effectively in real-world
-        professional situations.
-      </p>
-
-    </section>
-
-    <div class="preview-box">
-
-      <h2 class="preview-title">
+      <div class="header-badge">
         Limited App Preview
-      </h2>
+      </div>
+    </div>
+  </header>
 
-      <p class="preview-text">
-        The full BridgeEDU platform includes advanced searchable communication templates,
-        editable quick-copy messaging, situation-based communication guidance, and future
-        premium offline assistant functionality currently under development.
-      </p>
+  <nav class="main-nav">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="leaders.html">School Leaders</a>
+      <a href="research.html">Research</a>
+      <a href="resources.html">Resources</a>
+      <a href="toolkit.html">Toolkit</a>
+      <a href="app-preview.html" class="active">App Preview</a>
+    </div>
+  </nav>
 
-      <div class="feature-grid">
+  <section class="hero">
+    <div class="hero-inner">
 
-        <div class="feature-card">
-          <h3>Professional Messaging</h3>
-          <p>
-            Carefully structured communication templates designed specifically for multilingual educational environments.
-          </p>
+      <div>
+        <span class="eyebrow">BridgeEDU App Preview</span>
+
+        <h2>
+          A controlled preview of the BridgeEDU communication assistant.
+        </h2>
+
+        <p>
+          The BridgeEDU app is designed to support clearer professional messages, structured communication choices, and more confident interaction in multilingual school environments. This page presents a limited public preview of the platform direction.
+        </p>
+
+        <div class="button-group">
+          <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Unlock Full Access</a>
+          <a href="toolkit.html" class="btn btn-secondary">View Toolkit</a>
         </div>
-
-        <div class="feature-card">
-          <h3>Quick Copy Responses</h3>
-          <p>
-            Instantly access editable communication responses for common professional situations and daily interactions.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Context-Based Guidance</h3>
-          <p>
-            Organised communication support based on situation, urgency, tone, and communication purpose.
-          </p>
-        </div>
-
       </div>
 
-      <a href="https://payhip.com/b/6Tik2" target="_blank" class="button">
-        Unlock Full Access
-      </a>
+      <div class="software-panel">
+        <div class="app-window">
+          <div class="app-bar">
+            <span>BridgeEDU Assistant</span>
+            <span class="status-pill">Preview</span>
+          </div>
 
-      <div class="small-note">
-        This page provides a limited public preview only. Full premium access and future platform upgrades continue expanding as BridgeEDU develops.
+          <div class="app-body">
+            <img src="bridgeedu-logo-bubble.png" alt="BridgeEDU logo" class="app-logo">
+
+            <div class="mock-card">
+              <h3>Choose a situation</h3>
+              <p>Find communication support based on context, tone, urgency, and professional purpose.</p>
+            </div>
+
+            <div class="mock-card">
+              <h3>Review a message pathway</h3>
+              <p>Use structured guidance to prepare clearer school-based communication.</p>
+            </div>
+
+            <div class="locked-strip">
+              Full template access is available through the toolkit pathway.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="product-strip">
+    <div class="product-strip-inner">
+      <div class="strip-item">Limited public preview</div>
+      <div class="strip-item">Professional message support</div>
+      <div class="strip-item">Controlled access pathway</div>
+      <div class="strip-item">Future offline assistant direction</div>
+    </div>
+  </section>
+
+  <section class="content-section">
+
+    <div class="section-heading">
+      <h3>What the app is designed to support</h3>
+
+      <p>
+        The BridgeEDU app is being developed as a practical communication assistant for school-based professional messaging. It is not intended to replace judgement. It is intended to guide clearer communication choices.
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h4>Professional messaging</h4>
+        <p>
+          Support for writing clearer, calmer, and more structured messages in school communication contexts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Situation-based guidance</h4>
+        <p>
+          Communication support organised around real professional situations, not vague generic advice.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Quick-copy pathways</h4>
+        <p>
+          Ready-to-adapt message support designed to reduce hesitation and improve communication confidence.
+        </p>
       </div>
 
     </div>
 
-    <footer>
-      Developed by Neville O’Callaghan • BridgeEDU
-    </footer>
+  </section>
 
-  </div>
+  <section class="split-section">
+
+    <div class="split-inner">
+
+      <div class="split-text">
+        <h3>Why this is a limited preview</h3>
+
+        <p>
+          The public website is designed to introduce BridgeEDU, explain the communication problem, and demonstrate the platform direction without giving unrestricted access to the full communication system.
+        </p>
+
+        <p>
+          This keeps the preview useful while protecting the commercial value of the toolkit, templates, and future app-based assistant features.
+        </p>
+
+        <p>
+          Visitors can explore the idea, understand the value, and decide whether to unlock the fuller communication support pathway through Payhip.
+        </p>
+      </div>
+
+      <div class="feature-panel">
+        <h4>The preview is designed to show:</h4>
+
+        <ul>
+          <li>the communication assistant concept</li>
+          <li>the professional tone of the platform</li>
+          <li>the type of school-based support being developed</li>
+          <li>the difference between public preview and full access</li>
+          <li>the wider BridgeEDU product direction</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="quote-section">
+
+    <div class="quote-inner">
+      <blockquote>
+        A good communication assistant should not overwhelm users. It should help them make clearer decisions at the moment they need support.
+      </blockquote>
+
+      <p>
+        That is the direction behind the BridgeEDU app.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <div class="section-heading">
+      <h3>How the preview fits into the wider ecosystem</h3>
+
+      <p>
+        BridgeEDU is not just a single page or a single product. The website, toolkit, and app preview work together as a connected communication support pathway.
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h4>Learn the problem</h4>
+        <p>
+          The website explains why communication clarity matters for teachers, leaders, and multilingual school teams.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Explore the support</h4>
+        <p>
+          The resources and preview pages introduce the structure, tone, and practical direction of BridgeEDU.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Unlock fuller access</h4>
+        <p>
+          The toolkit pathway provides a controlled route into more complete communication support.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="split-section">
+
+    <div class="split-inner">
+
+      <div class="split-text">
+        <h3>Future platform direction</h3>
+
+        <p>
+          BridgeEDU is being developed towards a professional communication assistant that remains practical, controlled, and focused on real educational contexts.
+        </p>
+
+        <p>
+          Future development may include stronger offline guided support, improved decision pathways, expanded message categories, and app-based user experience improvements.
+        </p>
+
+        <p>
+          The long-term goal is to create a reliable communication support system that helps users move from uncertainty towards clearer professional action.
+        </p>
+
+        <a href="toolkit.html" class="btn btn-primary">View Toolkit</a>
+      </div>
+
+      <div class="feature-panel">
+        <h4>Future development may include:</h4>
+
+        <ul>
+          <li>offline guided assistant functionality</li>
+          <li>expanded communication categories</li>
+          <li>more structured decision pathways</li>
+          <li>improved app-based user experience</li>
+          <li>stronger controlled access options</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <div class="preview-panel">
+      <h3>Ready to move beyond the preview?</h3>
+
+      <p>
+        The public preview introduces the BridgeEDU direction. Full access is available through the toolkit pathway for users who want more structured professional communication support.
+      </p>
+
+      <div class="button-group">
+        <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Unlock Full Access</a>
+        <a href="resources.html" class="btn btn-secondary">Browse Resources</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cta-section">
+
+    <h3>
+      Explore the preview. Unlock the full pathway when ready.
+    </h3>
+
+    <p>
+      BridgeEDU is designed to support clearer professional communication across multilingual school environments.
+    </p>
+
+    <div class="button-group">
+      <a href="https://payhip.com/b/6Tik2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Unlock Full Access</a>
+      <a href="toolkit.html" class="btn btn-secondary">View Toolkit</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><strong>BridgeEDU</strong></p>
+    <p>Developed by Neville O’Callaghan</p>
+    <p>&copy; 2026 BridgeEDU. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
